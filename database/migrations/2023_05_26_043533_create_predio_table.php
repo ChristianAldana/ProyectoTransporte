@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateCamionsTable extends Migration
+class CreatePrediosTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,8 +13,9 @@ class CreateCamionsTable extends Migration
      */
     public function up()
     {
-        Schema::create('camions', function (Blueprint $table) {
-            $table->id('');
+        Schema::create('predio', function (Blueprint $table) {
+            $table->id('id_predio');
+            $table->string('ubicacion');
             $table->timestamps();
         });
     }
@@ -26,6 +27,6 @@ class CreateCamionsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('camions');
+        Schema::dropIfExists('predio');
     }
 }
