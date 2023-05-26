@@ -16,12 +16,10 @@ class CreateCamionTable extends Migration
             $table->unsignedBigInteger('id_transportista')->nullable();
             $table->foreign('id_transportista')->references('id')->on('transportista')->onDelete('no action');
 
-            $table->timestamps();
         });
     }
-
-    public function down()
-    {
-        Schema::dropIfExists('camion');
-    }
-}
+            public function down()
+            {
+                Schema::dropIfExists('camion');
+            }
+        }

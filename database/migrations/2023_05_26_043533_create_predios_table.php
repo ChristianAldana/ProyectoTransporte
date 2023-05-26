@@ -14,7 +14,8 @@ class CreatePrediosTable extends Migration
     public function up()
     {
         Schema::create('predios', function (Blueprint $table) {
-            $table->id();
+            $table->id('id_predio');
+            $table->string('ubicacion');
             $table->timestamps();
         });
     }
