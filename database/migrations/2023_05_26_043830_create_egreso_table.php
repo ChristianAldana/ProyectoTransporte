@@ -1,3 +1,4 @@
+
 <?php
 
 use Illuminate\Database\Migrations\Migration;
@@ -13,8 +14,8 @@ class CreateEgresosTable extends Migration
      */
     public function up()
     {
-        Schema::create('egresos', function (Blueprint $table) {
-            $table->id('id_ingreso')->primary();
+        Schema::create('egreso', function (Blueprint $table) {
+            $table->id('id_egreso')->primary();
             $table->date('fecha');
             $table->time('hora');
             $table->string('destino');
@@ -41,6 +42,6 @@ class CreateEgresosTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('egresos');
+        Schema::dropIfExists('egreso');
     }
 }

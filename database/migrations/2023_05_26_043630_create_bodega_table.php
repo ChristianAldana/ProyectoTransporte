@@ -7,17 +7,17 @@ use Illuminate\Support\Facades\Schema;
 class CreateBodegasTable extends Migration
 {
     /**
-     * Run the migrations.
+     * Run the migrations
      *
      * @return void
      */
     public function up()
     {
-        Schema::create('bodegas', function (Blueprint $table) {
+        Schema::create('bodega', function (Blueprint $table) {
             $table->id('id_bodega');
             $table->string('bodega');
             $table->unsignedBigInteger('id_predio');
-            $table->foreign('id_predio')->references('id_predio')->on('predios');
+            $table->foreign('id_predio')->references('id_predio')->on('predio');
             $table->timestamps();
         });
     }
@@ -29,6 +29,6 @@ class CreateBodegasTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('bodegas');
+        Schema::dropIfExists('bodega');
     }
 }
