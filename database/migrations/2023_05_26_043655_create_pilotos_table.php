@@ -14,7 +14,11 @@ class CreatePilotosTable extends Migration
     public function up()
     {
         Schema::create('pilotos', function (Blueprint $table) {
-            $table->id();
+            $table->id('id_piloto');
+            $table->string('nombre');
+            $table->string('apellido');
+            $table->int('telefono');
+            $table->string('direccion');
             $table->timestamps();
         });
     }
