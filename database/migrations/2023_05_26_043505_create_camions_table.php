@@ -14,7 +14,7 @@ class CreateCamionsTable extends Migration
     public function up()
     {
         Schema::create('camions', function (Blueprint $table) {
-            $table->id();
+            $table->id('');
             $table->timestamps();
         });
     }
