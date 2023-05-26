@@ -4,28 +4,24 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateCamionsTable extends Migration
+class CreateCamionTable extends Migration
 {
-    /**
-     * Run the migrations.
-     *
-     * @return void
-     */
     public function up()
     {
-        Schema::create('camions', function (Blueprint $table) {
-            $table->id();
+        Schema::create('camion', function (Blueprint $table) {
+            $table->string('id_matricula')->primary();
+            $table->string('marca');
+            $table->string('modelo');
+            $table->integer('capacidad');
+            $table->unsignedBigInteger('id_transportista')->nullable();
+            $table->foreign('id_transportista')->references('id')->on('transportista')->onDelete('no action');
+
             $table->timestamps();
         });
     }
 
-    /**
-     * Reverse the migrations.
-     *
-     * @return void
-     */
     public function down()
     {
-        Schema::dropIfExists('camions');
+        Schema::dropIfExists('camion');
     }
 }
