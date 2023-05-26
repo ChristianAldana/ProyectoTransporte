@@ -14,7 +14,7 @@ class CreateCamionTable extends Migration
             $table->string('modelo');
             $table->integer('capacidad');
             $table->unsignedBigInteger('id_transportista')->nullable();
-            $table->foreign('id_transportista')->references('id')->on('carga')->onDelete('no action');
+            $table->foreign('id_transportista')->references('id')->on('transportista')->onDelete('no action');
 
         });
     }
