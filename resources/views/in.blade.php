@@ -1,7 +1,8 @@
 <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
 <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-<!------ Include the above in your HEAD tag ---------->
+
+
 <link href="{{ asset('assets/form.css') }}" rel="stylesheet">
 
 <div class="container contact">
@@ -41,7 +42,6 @@
 				</div>
 				<div class="form-group">        
 				  <div class="col-sm-offset-2 col-sm-10">
-                    <input class="btn btn-default" name="enviar" type="submit" value="Enviar" />
                   <button type="submit" class="btn btn-default">Submit</button>
 				  </div>
 				</div>
