@@ -23,8 +23,8 @@ class CreateEgresoTable extends Migration
             $table->unsignedBigInteger('id_carga');
             $table->foreign('id_carga')->references('id_carga')->on('carga');
 
-            $table->unsignedBigInteger('id_matricula');
-            $table->foreign('id_matricula')->references('id_matricula')->on('camion');
+            $table->string('matricula');
+            $table->foreign('matricula')->references('matricula')->on('camion');
 
             $table->unsignedBigInteger('id_transportista');
             $table->foreign('id_transportista')->references('id_transportista')->on('transportista');

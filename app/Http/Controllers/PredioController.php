@@ -24,7 +24,9 @@ class PredioController extends Controller
      */
     public function create()
     {
-        //
+        $predio = Predio::all(); 
+
+        return view('in', ['predio' => $predio]);
     }
 
     /**

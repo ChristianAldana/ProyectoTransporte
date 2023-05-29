@@ -25,7 +25,9 @@ class TransportistaController extends Controller
      */
     public function create()
     {
-        //
+        $transportista = Transportista::all(); 
+
+        return view('in', ['transportista' => $transportista]);
     }
 
     /**
