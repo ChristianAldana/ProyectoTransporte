@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\transportista;
 use Illuminate\Http\Request;
+use RealRashid\SweetAlert\Facades\Alert;
 
 class TransportistaController extends Controller
 {
@@ -24,7 +25,9 @@ class TransportistaController extends Controller
      */
     public function create()
     {
-        //
+        $transportista = Transportista::all(); 
+
+        return view('in', ['transportista' => $transportista]);
     }
 
     /**

@@ -24,7 +24,9 @@ class PilotoController extends Controller
      */
     public function create()
     {
-        //
+        $piloto = Piloto::all(); 
+
+        return view('in', ['piloto' => $piloto]);
     }
 
     /**

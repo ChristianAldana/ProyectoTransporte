@@ -24,7 +24,9 @@ class BodegaController extends Controller
      */
     public function create()
     {
-        //
+        $bodega = Bodega::all(); 
+
+        return view('in', ['bodega' => $bodega]);
     }
 
     /**

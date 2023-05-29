@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateCargasTable extends Migration
+class CreateCargaTable extends Migration
 {
     /**
      * Run the migrations.

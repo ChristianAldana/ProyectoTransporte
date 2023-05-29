@@ -24,7 +24,9 @@ class CamionController extends Controller
      */
     public function create()
     {
-        //
+        $camion = Camion::all(); 
+
+        return view('in', ['camion' => $camion]);
     }
 
     /**
