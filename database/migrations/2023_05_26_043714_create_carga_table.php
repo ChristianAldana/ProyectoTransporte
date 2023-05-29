@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateCargasTable extends Migration
+class CreateCargaTable extends Migration
 {
     /**
      * Run the migrations.
@@ -14,7 +14,7 @@ class CreateCargasTable extends Migration
     public function up()
     {
         Schema::create('carga', function (Blueprint $table) {
-            $table->id('id_carga')->primary();
+            $table->id('id_carga');
             $table->string('carga');
             $table->timestamps();
         });

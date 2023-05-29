@@ -9,13 +9,12 @@ class CreateCamionTable extends Migration
     public function up()
     {
         Schema::create('camion', function (Blueprint $table) {
-            $table->string('id_matricula')->primary();
+            $table->id('id_matricula');
             $table->string('marca');
             $table->string('modelo');
             $table->integer('capacidad');
-            $table->unsignedBigInteger('id_transportista')->nullable();
-            $table->foreign('id_transportista')->references('id')->on('transportista')->onDelete('no action');
-
+            $table->unsignedBigInteger('id_transportista');
+            $table->foreign('id_transportista')->references('id_transportista')->on('transportista');
         });
     }
             public function down()

@@ -5,7 +5,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateEgresosTable extends Migration
+class CreateEgresoTable extends Migration
 {
     /**
      * Run the migrations.
@@ -15,22 +15,31 @@ class CreateEgresosTable extends Migration
     public function up()
     {
         Schema::create('egreso', function (Blueprint $table) {
-            $table->id('id_egreso')->primary();
+            $table->id('id_egreso');
             $table->date('fecha');
             $table->time('hora');
             $table->string('destino');
-            $table->unsignedBigInteger('id_carga')->nullable();
-            $table->foreign('id_carga')->references('id')->on('carga')->onDelete('no action');
-            $table->unsignedBigInteger('id_transportista')->nullable();
-            $table->foreign('id_transportista')->references('id')->on('transportista')->onDelete('no action');
-            $table->unsignedBigInteger('id_predio')->nullable();
-            $table->foreign('id_predio')->references('id')->on('predio')->onDelete('no action');
-            $table->unsignedBigInteger('id_bodega')->nullable();
-            $table->foreign('id_bodega')->references('id')->on('bodega')->onDelete('no action');
-            $table->unsignedBigInteger('id_matricula')->nullable();
-            $table->foreign('id_matricula')->references('id')->on('matricula')->onDelete('no action');
-            $table->unsignedBigInteger('id_usuario')->nullable();
-            $table->foreign('id_usuario')->references('id')->on('users')->onDelete('no action');
+
+            $table->unsignedBigInteger('id_carga');
+            $table->foreign('id_carga')->references('id_carga')->on('carga');
+
+            $table->unsignedBigInteger('id_matricula');
+            $table->foreign('id_matricula')->references('id_matricula')->on('camion');
+
+            $table->unsignedBigInteger('id_transportista');
+            $table->foreign('id_transportista')->references('id_transportista')->on('transportista');
+
+            $table->unsignedBigInteger('id_piloto');
+            $table->foreign('id_piloto')->references('id_piloto')->on('piloto');
+
+            $table->unsignedBigInteger('id_predio');
+            $table->foreign('id_predio')->references('id_predio')->on('predio');
+
+            $table->unsignedBigInteger('id_bodega');
+            $table->foreign('id_bodega')->references('id_bodega')->on('bodega');
+
+            $table->unsignedBigInteger('id_usuario');
+            $table->foreign('id_usuario')->references('id_usuario')->on('users');
             $table->timestamps();
         });
     }
