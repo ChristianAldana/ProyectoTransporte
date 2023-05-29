@@ -13,9 +13,9 @@ class CreateCamionTable extends Migration
             $table->string('matricula')->primary();
             $table->string('marca');
             $table->string('modelo');
-            $table->string('capacidad');
-            $table->unsignedBigInteger('id_transportista');
-            $table->foreign('id_transportista')->references('id_transportista')->on('transportista');
+            $table->integer('capacidad');
+            $table->unsignedBigInteger('id_transportista')->nullable();
+            $table->foreign('id_transportista')->references('id_transportista')->on('transportista')->onDelete('cascade');
         });
     }
             public function down()
