@@ -7,5 +7,6 @@ use Illuminate\Database\Eloquent\Model;
 
 class Camion extends Model
 {
-    use HasFactory;
+
+
 }

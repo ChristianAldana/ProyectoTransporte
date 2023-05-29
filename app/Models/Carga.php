@@ -7,5 +7,6 @@ use Illuminate\Database\Eloquent\Model;
 
 class Carga extends Model
 {
-    use HasFactory;
+
+
 }
