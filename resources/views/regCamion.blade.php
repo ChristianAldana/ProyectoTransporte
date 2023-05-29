@@ -42,16 +42,15 @@
 				  </div>
 				</div>
 
-                <div class="form-group">
-				  <label class="control-label col-sm-2" for="cap">Transportista</label>
-				  <div class="col-12">
-                  <select class="form-select" aria-label="Default select example">
-                    <option selected>Selecciona la Transportista</option>
-                    <option value="1">One</option>
-                    <option value="2">Two</option>
-                    <option value="3">Three</option>
-                    </select>
-				  </div>
+				<div class="input-group col-mb-10"> 
+					<label class="control-label col-sm-3 mr-2" for="transportistaIn">Transportista</label>
+					<select class="form-select col-sm-6 ml-4" id="transportistaIn">
+						<option selected>Selecciona...</option>	
+						@foreach ($transportista as @transportista)
+						<option value="{{ $transportista-id }}">{{ $transportista->nombre }}</option>
+						@endforeach
+
+					</select>
 				</div>
 
 				<div class="form-group">
