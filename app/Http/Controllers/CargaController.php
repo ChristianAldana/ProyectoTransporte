@@ -24,7 +24,9 @@ class CargaController extends Controller
      */
     public function create()
     {
-        //
+        $carga = Carga::all(); 
+
+        return view('in', ['carga' => $carga]);
     }
 
     /**
