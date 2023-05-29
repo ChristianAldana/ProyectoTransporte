@@ -3,6 +3,12 @@
 namespace App\Http\Controllers;
 
 use App\Models\Ingreso;
+use App\Models\Transportista;
+use App\Models\Camion;
+use App\Models\Piloto;
+use App\Models\Carga;
+use App\Models\Predio;
+use App\Models\Bodega;
 use Illuminate\Http\Request;
 
 class IngresoController extends Controller
@@ -44,9 +50,22 @@ class IngresoController extends Controller
      * @param  \App\Models\Ingreso  $ingreso
      * @return \Illuminate\Http\Response
      */
-    public function show(Ingreso $ingreso)
-    {
-        //
+    public function showIn(Ingreso $ingreso)
+    {   
+        /*$transportista = transportista::all(); 
+        $camion = camion::all();
+        $piloto = piloto::all();
+        $carga = carga::all();
+        $predio = predio::all();
+        $bodega = bodega::all();
+
+        return view('in', compact('transportista ', 'camion', 'piloto', 'carga', 'predio', 'bodega'));
+        */
+        $ingreso = Ingreso::with(['transportista', 'camion', 'piloto', 'carga', 'predio', 'bodega'])->get();
+
+        return view('in', ['ingreso' => $ingreso]);
+
+
     }
 
     /**

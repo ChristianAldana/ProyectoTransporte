@@ -16,3 +16,5 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('in');
 });
+
+Route::get('/show/{id}',[IngresoController::class,'showIn'])->name('ingreso.show');
