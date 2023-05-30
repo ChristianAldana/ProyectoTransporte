@@ -7,12 +7,16 @@ use Illuminate\Database\Eloquent\Model;
 
 class Camion extends Model
 {
-    protected $table='camion';
-    protected $primaryKey = 'matricula';
-    protected $fillable = ['nombre', 'razon_social'];
 
-    public function camiones()
+    //    Parte codificada christian
+
+    protected $table = 'camion';
+    protected $primaryKey = 'id_matricula';
+    public $incrementing = false;
+    public $timestamps = false;
+
+    public function transportista()
     {
-        return $this->hasMany('App\Camion', 'id_transporte', 'id_transporte');
+        return $this->belongsTo('App\Models\Transportista', 'id_transportista');
     }
 }
