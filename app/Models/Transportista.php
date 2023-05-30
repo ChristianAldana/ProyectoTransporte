@@ -5,12 +5,10 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class transportista extends Model
+class Transportista extends Model
 
 {
-<<<<<<< HEAD
-
-=======
-    protected $table='transportista';
->>>>>>> master
+    protected $table = 'transportista';
+    protected $primaryKey = 'id_transportista';
+    public $timestamps = true;
 }
