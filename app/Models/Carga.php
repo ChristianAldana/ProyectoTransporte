@@ -7,10 +7,8 @@ use Illuminate\Database\Eloquent\Model;
 
 class Carga extends Model
 {
-<<<<<<< HEAD
 
-
-=======
-    protected $table='carga';
->>>>>>> master
+    protected $table = 'carga';
+    protected $primaryKey = 'id_carga';
+    public $timestamps = true;
 }
