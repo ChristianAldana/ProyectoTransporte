@@ -7,5 +7,9 @@ use Illuminate\Database\Eloquent\Model;
 
 class Predio extends Model
 {
+<<<<<<< HEAD
 
+=======
+    protected $table='predio';
+>>>>>>> master
 }

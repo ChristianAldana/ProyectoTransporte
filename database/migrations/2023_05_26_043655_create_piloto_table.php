@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreatePilotosTable extends Migration
+class CreatePilotoTable extends Migration
 {
     /**
      * Run the migrations.
@@ -17,7 +17,7 @@ class CreatePilotosTable extends Migration
             $table->id('id_piloto');
             $table->string('nombre');
             $table->string('apellido');
-            $table->int('telefono');
+            $table->integer('telefono');
             $table->string('direccion');
             $table->timestamps();
         });

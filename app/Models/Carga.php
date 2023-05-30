@@ -7,6 +7,10 @@ use Illuminate\Database\Eloquent\Model;
 
 class Carga extends Model
 {
+<<<<<<< HEAD
 
 
+=======
+    protected $table='carga';
+>>>>>>> master
 }
