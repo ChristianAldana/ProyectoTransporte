@@ -18,13 +18,13 @@
 			<div class="contact-form">
 				<div class="form-group">
 				  <label class="control-label col-sm-2" for="Matricula">Matricula</label>
-				  <div class="col-sm-10">          
+				  <div class="col-sm-10">
 					<input type="text" class="form-control" id="Matricula" placeholder="Ingresa la matricula" name="Matricula">
 				  </div>
 				</div>
 				<div class="form-group">
 				  <label class="control-label col-sm-4" for="marca">Marca</label>
-				  <div class="col-sm-10">          
+				  <div class="col-sm-10">
 					<input type="text" class="form-control" id="marca" placeholder="Ingresa la Marca" name="marca">
 				  </div>
 				</div>
@@ -42,11 +42,11 @@
 				  </div>
 				</div>
 
-				<div class="input-group col-mb-10"> 
+				<div class="input-group col-mb-10">
 					<label class="control-label col-sm-3 mr-2" for="transportistaIn">Transportista</label>
 					<select class="form-select col-sm-6 ml-4" id="transportistaIn">
-						<option selected>Selecciona...</option>	
-						@foreach ($transportista as @transportista)
+						<option selected>Selecciona...</option>
+						@foreach ($transportistas as $transportista)
 						<option value="{{ $transportista-id }}">{{ $transportista->nombre }}</option>
 						@endforeach
 
@@ -59,7 +59,7 @@
 					<textarea class="form-control" rows="5" id="comment"></textarea>
 				  </div>
 				</div>
-				<div class="form-group">        
+				<div class="form-group">
 				  <div class="col-sm-offset-2 col-sm-10">
                   <button type="submit" class="btn btn-default">Submit</button>
 				  </div>

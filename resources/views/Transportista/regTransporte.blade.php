@@ -17,17 +17,17 @@
 		<div class="col-md-9">
 			<div class="contact-form">
 				<div class="form-group">
-				  <label class="control-label col-sm-2" for="fname">Nombre</label>
-				  <div class="col-sm-10">          
-					<input type="text" class="form-control" id="fname" placeholder="Ingresa el Nombre" name="fname">
+				  <label class="control-label col-sm-2" for="nombre">Nombre</label>
+				  <div class="col-sm-10">
+					<input type="text" class="form-control" id="nombre" placeholder="Ingresa el Nombre" name="nombre">
 				  </div>
 				</div>
-				<div class="form-group">
-				  <label class="control-label col-sm-4" for="lname">Razon Social</label>
-				  <div class="col-sm-10">          
-					<input type="text" class="form-control" id="lname" placeholder="Ingresa la Razon Social" name="lname">
-				  </div>
-				</div>
+                <div class="form-group">
+                    <label class="control-label col-sm-4" for="razon_social">Razon Social</label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" id="razon_social" placeholder="Ingresa la Razon Social" name="razon_social">
+                    </div>
+                </div>
 				<div class="form-group">
 				  <label class="control-label col-sm-2" for="direccion">Direccion</label>
 				  <div class="col-sm-10">
@@ -35,12 +35,6 @@
 				  </div>
 				</div>
 				<div class="form-group">
-				  <label class="control-label col-sm-2" for="comment">Comment:</label>
-				  <div class="col-sm-10">
-					<textarea class="form-control" rows="5" id="comment"></textarea>
-				  </div>
-				</div>
-				<div class="form-group">        
 				  <div class="col-sm-offset-2 col-sm-10">
                   <button type="submit" class="btn btn-default">Submit</button>
 				  </div>

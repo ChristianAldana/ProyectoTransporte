@@ -1,12 +1,11 @@
-@extends('layout')
+@extends('layouts/layout')
 
 @section('title', 'Page Title')
 
 @section('content')
-
     <!DOCTYPE html>
-<html lang="en">
-<head>
+    <html lang="en">
+    <head>
 
 
 {{--    Parte del login christian--}}

@@ -51,8 +51,8 @@ class IngresoController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function showIn(Ingreso $ingreso)
-    {   
-        /*$transportista = transportista::all(); 
+    {
+        /*$transportista = transportista::all();
         $camion = camion::all();
         $piloto = piloto::all();
         $carga = carga::all();
