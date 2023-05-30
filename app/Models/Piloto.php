@@ -7,10 +7,8 @@ use Illuminate\Database\Eloquent\Model;
 
 class Piloto extends Model
 {
-<<<<<<< HEAD
 
-=======
-    protected $table='piloto';
-    
->>>>>>> master
+    protected $table = 'piloto';
+    protected $primaryKey = 'id_piloto';
+    public $timestamps = true;
 }
