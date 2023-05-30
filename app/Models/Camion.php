@@ -7,6 +7,10 @@ use Illuminate\Database\Eloquent\Model;
 
 class Camion extends Model
 {
+<<<<<<< HEAD
+
+
+=======
     protected $table='camion';
     protected $primaryKey = 'matricula';
     protected $fillable = ['nombre', 'razon_social'];
@@ -15,4 +19,5 @@ class Camion extends Model
     {
         return $this->hasMany('App\Camion', 'id_transporte', 'id_transporte');
     }
+>>>>>>> master
 }

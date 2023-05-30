@@ -10,6 +10,8 @@ class Ingreso extends Model
 
 {
 
+<<<<<<< HEAD
+=======
     protected $table = 'ingreso';
 
     public function transportista()
@@ -41,4 +43,5 @@ class Ingreso extends Model
     {
         return $this->belongsTo(Bodega::class);
     }
+>>>>>>> master
 }

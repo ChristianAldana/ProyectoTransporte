@@ -6,6 +6,11 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
 class transportista extends Model
+
 {
+<<<<<<< HEAD
+
+=======
     protected $table='transportista';
+>>>>>>> master
 }
