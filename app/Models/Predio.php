@@ -7,5 +7,8 @@ use Illuminate\Database\Eloquent\Model;
 
 class Predio extends Model
 {
-    protected $table='predio';
+    protected $table = 'predio';
+    protected $primaryKey = 'id_predio';
+    public $timestamps = true;
+
 }

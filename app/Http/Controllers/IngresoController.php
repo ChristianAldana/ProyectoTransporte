@@ -30,7 +30,15 @@ class IngresoController extends Controller
      */
     public function create()
     {
-        //
+        $transportistas = Transportista::all(); 
+        $camiones = Camion::all();
+        $pilotos = Piloto::all();
+        $cargas = Carga::all();
+        $predios = Predio::all();
+        $bodegas = Bodega::all();
+
+        return view('in', compact('transportistas ', 'camiones', 'pilotos', 'cargas', 'predios', 'bodegas'));
+        
     }
 
     /**
@@ -50,6 +58,7 @@ class IngresoController extends Controller
      * @param  \App\Models\Ingreso  $ingreso
      * @return \Illuminate\Http\Response
      */
+<<<<<<< HEAD
     public function showIn(Ingreso $ingreso)
     {
         /*$transportista = transportista::all();
@@ -65,6 +74,11 @@ class IngresoController extends Controller
 
         return view('in', ['ingreso' => $ingreso]);
 
+=======
+    public function show(Ingreso $ingreso)
+    {   
+  
+>>>>>>> ec5fbb1cfbd8ea03ab04bd2f985767cc4ea36e76
 
     }
 

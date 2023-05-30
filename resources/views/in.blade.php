@@ -38,8 +38,8 @@
 					<select class="form-select col-sm-6 ml-4" id="transportistaIn">
 						<option selected>Selecciona...</option>	
 
-						@foreach ($ingreso as $ingreso)
-							<option value="{{ $ingreso->transportista->id }}">{{ $ingreso->transportista->nombre }}</option>
+						@foreach ($transportistas as $transportista)
+						<option value="{{ $transportista-id }}">{{ $transportista->nombre }}</option>
 						@endforeach
 
 					</select>
@@ -49,13 +49,10 @@
 					<label class="control-label col-sm-3 mr-2" for="matriculaIn">Matricula</label>
 					<select class="form-select col-sm-6 ml-4" id="matriculaIn">
 						<option selected>Selecciona...</option>	
-						@foreach ($ingreso as $ingreso)
-							<option value="{{ $ingreso->camion->id }}">{{ $ingreso->camion->matricula }}</option>
-						@endforeach
 
-						<!--@foreach ($camion as $camion)
-						<option value="{{ $camion-id }}">{{ $camion->id_matricula }}</option>
-						@endforeach-->
+						@foreach ($camiones as $camion)
+						<option value="{{ $camion-matricula }}">{{ $camion->matricula }}</option>
+						@endforeach
 
 					</select>
 				</div>
@@ -64,14 +61,10 @@
 					<label class="control-label col-sm-3 mr-2" for="pilotoIn">Piloto</label>
 					<select class="form-select col-sm-6 ml-4" id="pilotoIn">
 						<option selected>Selecciona...</option>	
-						
-						@foreach ($ingreso as $ingreso)
-							<option value="{{ $ingreso->piloto->id }}">{{ $ingreso->piloto->nombre }}</option>
-						@endforeach
 
-						<!--@foreach ($piloto as $piloto)
+						@foreach ($pilotos as $piloto)
 						<option value="{{ $piloto-id }}">{{ $piloto->nombre }}</option>
-						@endforeach-->
+						@endforeach
 
 					</select>
 				</div>
@@ -96,24 +89,17 @@
 					<select class="form-select col-sm-4 ml-3" id="predioIn">
 						<option selected>Selecciona...</option>
 
-						@foreach ($ingreso as $ingreso)
-							<option value="{{ $ingreso->predio->id }}">{{ $ingreso->predio->ubicacion }}</option>
-						@endforeach
-
-						<!--@foreach ($predio as $predio)
+						@foreach ($predios as $predio)
 						<option value="{{ $predio-id }}">{{ $predio->ubicacion }}</option>
-						@endforeach-->
+						@endforeach
 					</select>
 
 					<select class="form-select col-sm-4 ml-5" id="bodegaIn">
                     <option selected>Selecciona...</option>
-					@foreach ($ingreso as $ingreso)
-							<option value="{{ $ingreso->bodega->id }}">{{ $ingreso->bodega->bodega }}</option>
-						@endforeach
 
-					<!--@foreach ($bodega as $bodega)
+						@foreach ($bodegas as $bodega)
 						<option value="{{ $bodega-id }}">{{ $bodega->bodega }}</option>
-						@endforeach-->
+						@endforeach
                     </select>
 				</div>
 
