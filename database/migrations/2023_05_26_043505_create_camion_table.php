@@ -9,7 +9,7 @@ class CreateCamionTable extends Migration
     public function up()
     {
         Schema::create('camion', function (Blueprint $table) {
-            /*$table->id('id_camion');*/
+            
             $table->string('matricula')->primary();
             $table->string('marca');
             $table->string('modelo');

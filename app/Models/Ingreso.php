@@ -11,6 +11,7 @@ class Ingreso extends Model
 {
 
     protected $table = 'ingreso';
+    protected $fillable = ['nombre', 'matricula', 'nombre', 'carga', 'ubicacion', 'bodega'];
 
     public function transportista()
     {
