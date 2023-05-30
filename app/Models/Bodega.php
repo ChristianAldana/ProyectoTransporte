@@ -9,6 +9,7 @@ use Illuminate\Database\Eloquent\Model;
 class Bodega extends Model
 {
 
+//    se finalizo el codigo
 //    Parte codificada christian
     protected $table = 'bodega';
     protected $primaryKey = 'id_bodega';
