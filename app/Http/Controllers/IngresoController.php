@@ -58,9 +58,27 @@ class IngresoController extends Controller
      * @param  \App\Models\Ingreso  $ingreso
      * @return \Illuminate\Http\Response
      */
+<<<<<<< HEAD
+    public function showIn(Ingreso $ingreso)
+    {
+        /*$transportista = transportista::all();
+        $camion = camion::all();
+        $piloto = piloto::all();
+        $carga = carga::all();
+        $predio = predio::all();
+        $bodega = bodega::all();
+
+        return view('in', compact('transportista ', 'camion', 'piloto', 'carga', 'predio', 'bodega'));
+        */
+        $ingreso = Ingreso::with(['transportista', 'camion', 'piloto', 'carga', 'predio', 'bodega'])->get();
+
+        return view('in', ['ingreso' => $ingreso]);
+
+=======
     public function show(Ingreso $ingreso)
     {   
   
+>>>>>>> ec5fbb1cfbd8ea03ab04bd2f985767cc4ea36e76
 
     }
 
