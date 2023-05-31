@@ -14,7 +14,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('Transportista/tabla-transp');
+    return view('home');
 });
 
 Route::get('/show/{id}',[IngresoController::class,'showIn'])->name('ingreso.show');
