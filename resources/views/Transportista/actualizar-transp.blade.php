@@ -7,7 +7,7 @@
 <link href="{{ asset('assets/form.css') }}" rel="stylesheet">
 @extends('layouts/layout')
 
-@section('Agregar', 'Transportista')
+@section('Actualizar', 'Transportista')
 
 @section('content')
 <div class="container contact">
