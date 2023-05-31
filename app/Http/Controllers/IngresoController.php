@@ -49,7 +49,17 @@ class IngresoController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $this->validate($request, [
+            'origen' => 'required',
+            'fechaIn' => 'required',
+            'horaIn' => 'required',
+            'transportistaIn' => 'required',
+            'matriculaIn' => 'required',
+            'pilotoIn' => 'required',
+            'cargaIn' => 'required',
+            'predioIn' => 'required',
+            'bodegaIn' => 'required',
+        ]);
     }
 
     /**

@@ -17,7 +17,7 @@ Route::get('/', function () {
     return view('in');
 });
 
-
+Route::get('/in', 'IngresoController@create');
 Route::get('/show/{id}',[IngresoController::class,'create'])->name('transportistas.create');
 Route::get('/show/{id}',[IngresoController::class,'create'])->name('camiones.create');
 Route::get('/show/{id}',[IngresoController::class,'create'])->name('pilotos.create');

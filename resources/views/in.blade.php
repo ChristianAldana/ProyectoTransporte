@@ -18,6 +18,14 @@
 		</div>
 		<div class="col-md-9">
 			<div class="contact-form">
+				
+				<div class="alert alert-danger"><ul>				
+					@foreach ($errors->all() as $error)
+						<li>{{ $error }}</li>
+					@endforeach
+				</ul></div>
+
+
 				<div class="form-group">
 				  <label class="control-label col-sm-2" for="origen">Origen</label>
 				  <div class="col-sm-10">          
@@ -35,7 +43,7 @@
 
 				<div class="input-group col-mb-10"> 
 					<label class="control-label col-sm-3 mr-2" for="transportistaIn">Transportista</label>
-					<select class="form-select col-sm-6 ml-4" id="transportistaIn">
+					<select class="form-select col-sm-6 ml-4" id="transportistaIn" name="transportistaIn">
 						<option selected>Selecciona...</option>	
 
 						@foreach ($transportistas as $transportista)
@@ -47,7 +55,7 @@
 
 				<br><div class="input-group col-mb-10"> 
 					<label class="control-label col-sm-3 mr-2" for="matriculaIn">Matricula</label>
-					<select class="form-select col-sm-6 ml-4" id="matriculaIn">
+					<select class="form-select col-sm-6 ml-4" id="matriculaIn" name="matriculaIn">
 						<option selected>Selecciona...</option>	
 
 						@foreach ($camiones as $camion)
@@ -59,7 +67,7 @@
 
 				<br><div class="input-group col-mb-10"> 
 					<label class="control-label col-sm-3 mr-2" for="pilotoIn">Piloto</label>
-					<select class="form-select col-sm-6 ml-4" id="pilotoIn">
+					<select class="form-select col-sm-6 ml-4" id="pilotoIn" name="pilotoIn">
 						<option selected>Selecciona...</option>	
 
 						@foreach ($pilotos as $piloto)
@@ -71,7 +79,7 @@
 
 				<br><div class="input-group col-mb-10"> 
 					<label class="control-label col-sm-3 mr-2" for="cargaIn">Tipo de Carga</label>
-					<select class="form-select col-sm-6 ml-4" id="cargaIn">
+					<select class="form-select col-sm-6 ml-4" id="cargaIn" name="cargaIn">
 						<option selected>Selecciona...</option>
 						<option value="1">Materia prima</option>
 						<option value="2">Bien intermedio</option>
@@ -86,7 +94,7 @@
 					<label class="control-label col-sm-5" for="predioIn">Predio</label>
 					<label class="control-label col-sm-5" for="bodegaIn">Bodega</label>
 
-					<select class="form-select col-sm-4 ml-3" id="predioIn">
+					<select class="form-select col-sm-4 ml-3" id="predioIn" name="predioIn">
 						<option selected>Selecciona...</option>
 
 						@foreach ($predios as $predio)
@@ -94,7 +102,7 @@
 						@endforeach
 					</select>
 
-					<select class="form-select col-sm-4 ml-5" id="bodegaIn">
+					<select class="form-select col-sm-4 ml-5" id="bodegaIn" name="bodegaIn">
                     <option selected>Selecciona...</option>
 
 						@foreach ($bodegas as $bodega)
