@@ -1,11 +1,13 @@
 <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
 <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+@extends('layouts/layout')
+@section('Tabla', 'Transportista')
 
 
 <link href="{{ asset('assets/form.css') }}" rel="stylesheet">
-@section('Registros', 'Transportista')
 
+@section('content')
 <div class="container contact">
     <div class="row">
         <div class="col-md-3">
@@ -13,15 +15,22 @@
                 <img src="https://raw.githubusercontent.com/Suzzanne20/ResourceNekoStation/main/kisspng-computer-icons-truck-font-awesome-couriers-vector-5ae0b656310a78.1827635715246761822009.png" width="90"/>
                 <h2>Transportista</h2>
                 <h4>Registro Transportistas</h4>
+                <div class="d-flex justify-content-end">
+                    <a href="{{ route("transportista.create") }}" class="btn btn-primary btn-sm mr-2 mb-1">
+                        Agregar nuevo
+                    </a>
+                </div>
             </div>
         </div>
         <div class="col-md-9">
             <div class="table table-responsive">
                 <table class="table">
                     <thead>
-                    <th>Nombre Transportista</th>
-                    <th>Razón Social</th>
-                    <th>Dirección</th>
+                        <th>Nombre Transportista</th>
+                        <th>Razón Social</th>
+                        <th>Dirección</th>
+                        <th>Editar</th>
+                        <th>Eliminar</th>
                     </thead>
                     <tbody>
                     @foreach($datos as $item)
@@ -56,3 +65,4 @@
         </div>
     </div>
 </div>
+@endsection

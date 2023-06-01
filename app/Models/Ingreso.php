@@ -8,6 +8,8 @@ use Illuminate\Database\Eloquent\Model;
 class Ingreso extends Model
 {
     protected $table = 'ingreso';
+    protected $fillable = ['origen', 'fechaIn', 'horaIn', 'id_transportista', 'matricula', 'id_piloto', 'id_carga', 'id_predio', 'id_bodega' ];
+
 
     public function carga()
     {

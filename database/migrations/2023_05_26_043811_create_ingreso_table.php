@@ -6,19 +6,13 @@
 
 class CreateIngresoTable extends Migration
 {
-
-        /**
-         * Run the migrations.
-         *
-         * @return void
-         */
         public function up()
         {
             Schema::create('ingreso', function (Blueprint $table) {
                 $table->id('id_ingreso');
                 $table->string('origen');
-                $table->date('fecha');
-                $table->time('hora');
+                $table->date('fechaIn');
+                $table->time('horaIn');
 
                 $table->unsignedBigInteger('id_carga');
                 $table->foreign('id_carga')->references('id_carga')->on('carga');
@@ -45,13 +39,8 @@ class CreateIngresoTable extends Migration
             });
         }
 
-        /**
-         * Reverse the migrations.
-         *
-         * @return void
-         */
         public function down()
         {
             Schema::dropIfExists('ingreso');
         }
-    }
+}

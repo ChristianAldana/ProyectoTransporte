@@ -30,16 +30,16 @@ class IngresoController extends Controller
      */
     public function create()
     {
-        $transportistas = Transportista::all(); 
-        $camiones = Camion::all();
-        $pilotos = Piloto::all();
-        $cargas = Carga::all();
-        $predios = Predio::all();
-        $bodegas = Bodega::all();
+        $id_transportista = Transportista::all(); 
+        $matricula = Camion::all();
+        $id_piloto = Piloto::all();
+        $id_carga = Carga::all();
+        $id_predio = Predio::all();
+        $id_bodega = Bodega::all();
 
-        return view('ingreso.in'); 
+        return view('Ingreso.in'); 
 
-        return view('in', compact('transportistas ', 'camiones', 'pilotos', 'cargas', 'predios', 'bodegas'));
+        return view('in', compact('id_transportista ', 'matricula', 'id_piloto', 'id_carga', 'id_predio', 'id_bodega'));
         
     }
 
@@ -51,17 +51,17 @@ class IngresoController extends Controller
      */
     public function store(Request $request)
     {   
-        $ingresos = new Ingreso;
+        /*$ingresos = new Ingreso;
         $ingresos ->origen = $request->input ('origen');
         $ingresos ->fechaIn = $request->input ('fechaIn');
         $ingresos ->horaIn = $request->input ('horaIn');
-        $ingresos ->transportistaIn = $request->input ('transportistaIn');
-        $ingresos ->matriculaIn = $request->input ('matriculaIn');
-        $ingresos ->pilotoIn = $request->input ('pilotoIn');
-        $ingresos ->cargaIn = $request->input ('cargaIn');
-        $ingresos ->predioIn = $request->input ('predioIn');
-        $ingresos ->bodegaIn = $request->input ('bodegaIn');
-        $ingresos ->save();
+        $ingresos ->id_transportista = $request->input ('id_transportista');
+        $ingresos ->matricula = $request->input ('matricula');
+        $ingresos ->id_piloto = $request->input ('id_piloto');
+        $ingresos ->id_carga = $request->input ('id_carga');
+        $ingresos ->id_predio = $request->input ('id_predio');
+        $ingresos ->id_bodega = $request->input ('id_bodega');
+        $ingresos ->save();*/
 
         Ingreso::create($request->all());
 
@@ -70,15 +70,15 @@ class IngresoController extends Controller
             'origen' => 'required',
             'fechaIn' => 'required',
             'horaIn' => 'required',
-            'transportistaIn' => 'required',
-            'matriculaIn' => 'required',
-            'pilotoIn' => 'required',
-            'cargaIn' => 'required',
-            'predioIn' => 'required',
-            'bodegaIn' => 'required',
+            'id_transportista' => 'required',
+            'matricula' => 'required',
+            'id_piloto' => 'required',
+            'id_carga' => 'required',
+            'id_predio' => 'required',
+            'id_bodega' => 'required',
         ]);
 
-        return 'Store';
+        return 'Completo';
     }
 
     /**
@@ -98,9 +98,6 @@ class IngresoController extends Controller
 
         return view('in', compact('transportista ', 'camion', 'piloto', 'carga', 'predio', 'bodega'));
         */
-        $ingreso = Ingreso::with(['transportista', 'camion', 'piloto', 'carga', 'predio', 'bodega'])->get();
-
-        return view('in', ['ingreso' => $ingreso]);
 
 
     }

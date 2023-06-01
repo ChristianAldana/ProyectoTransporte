@@ -13,16 +13,24 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+
+
 Route::get('/', function () {
-    return view('/transportista/regTransporte');
-});
 
-Route::get('/Ingreso/in', 'IngresoController@create');
-Route::post('/Ingreso', 'IngresoController@store');
+    return view('Ingreso/in');});
+    
 
-/*Route::get('/show/{id}',[IngresoController::class,'showIn'])->name('ingreso.show');*/
+//RUTAS DE LOGIN
+Route::get('views/auth/login', function () {
+    return view('auth/login');
+})->name('login');
 
-//RUTAS TRANSPORTISTA
+Route::get('views/auth/register', function () {
+    return view('auth/register');
+})->name('register');
+
+
+
 Route::get('/transportista',[\App\Http\Controllers\TransportistaController::class,'index'])->name('transportista.index');
 Route::get('/create-transp',[\App\Http\Controllers\TransportistaController::class,'create'])->name('transportista.create');
 Route::post('/store-transp',[\App\Http\Controllers\TransportistaController::class,'store'])->name('transportista.store');
@@ -30,3 +38,17 @@ Route::get('/edit-transp/{id}',[\App\Http\Controllers\TransportistaController::c
 Route::put('/update-transp/{id}',[\App\Http\Controllers\TransportistaController::class,'update'])->name('transportista.update');
 Route::get('/show-transp/{id}',[\App\Http\Controllers\TransportistaController::class,'show'])->name('transportista.show');
 Route::delete('/destroy-transp/{id}', [\App\Http\Controllers\TransportistaController::class,'destroy'])->name('transportista.destroy');
+
+
+
+//RUTAS DE INGRESO
+Route::get('/show/{id}',[IngresoController::class,'create'])->name('transportistas.create');
+Route::get('/show/{id}',[IngresoController::class,'create'])->name('camiones.create');
+Route::get('/show/{id}',[IngresoController::class,'create'])->name('pilotos.create');
+Route::get('/show/{id}',[IngresoController::class,'create'])->name('cargas.create');
+Route::get('/show/{id}',[IngresoController::class,'create'])->name('predios.create');
+Route::get('/show/{id}',[IngresoController::class,'create'])->name('bodegas.create');
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
