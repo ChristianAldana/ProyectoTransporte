@@ -10,7 +10,7 @@ class TransportistaController extends Controller
 {
     public function index()
     {
-        $datos = Transportista::all();
+        $datos = Transportista::orderBy('id_transportista', 'asc')->paginate(10);
         return view('Transportista/tabla-transp', compact('datos'));
     }
     public function create()
@@ -29,19 +29,19 @@ class TransportistaController extends Controller
         return redirect() -> route('transportista.index');
 
     }
-    public function show($id)
+    public function show($id_transportista)
     {
-        $transportista = Transportista::find($id);
+        $transportista = Transportista::find($id_transportista);
         return view('Transportista/eliminar-transp', compact('transportista'));
     }
-    public function edit($id)
+    public function edit($id_transportista)
     {
-        $transportista = Transportista::find($id);
+        $transportista = Transportista::find($id_transportista);
         return view('Transportista/actualizar-transp', compact('transportista'));
     }
-    public function update(Request $request, $id)
+    public function update(Request $request, $id_transportista)
     {
-        $transportista = Transportista::find($id);
+        $transportista = Transportista::find($id_transportista);
         $transportista -> nombre = $request -> post('nombre');
         $transportista -> razon_social = $request->post('razon_social');
         $transportista -> direccion = $request->post('direccion');
@@ -49,9 +49,9 @@ class TransportistaController extends Controller
         Alert::toast('Actualizado!','info');
         return redirect() -> route('transportista.index');
     }
-    public function destroy($id)
+    public function destroy($id_transportista)
     {
-        $transportista = Transportista::find($id);
+        $transportista = Transportista::find($id_transportista);
         $transportista -> delete();
         Alert::toast('Eliminado con éxito', 'error');
         return redirect()->route("transportista.index");

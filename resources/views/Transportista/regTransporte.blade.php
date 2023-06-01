@@ -19,10 +19,9 @@
 			</div>
 		</div>
 		<div class="col-md-9">
-			<form class="contact-form">
-				<div class="form-group">
-                    <form action="{{route('transportista.store')}}" method="POST"></form>
-                    @csrf
+            <form action="{{route('transportista.store')}}"  method="POST" class="contact-form">
+                @csrf
+                    <div class="form-group">
                     <label class="control-label col-sm-2" for="nombre">Nombre</label>
                       <div class="col-sm-10">
                         <input type="text" class="form-control" id="nombre" placeholder="Ingresa el Nombre" name="nombre">
@@ -35,7 +34,7 @@
                         </div>
                     </div>
                     <div class="form-group">
-                      <label class="control-label col-sm-2" for="direccion">Direccion</label>
+                      <label class="control-label col-sm-2" for="direccion">Dirección</label>
                       <div class="col-sm-10">
                         <input type="text" class="form-control" id="direccion" placeholder="Ingresa la direccion" name="direccion">
                       </div>
@@ -49,8 +48,8 @@
                       </div>
                     </div>
                 </form>
-			</div>
-		</div>
+            </div>
+        </div>
 	</div>
 </div>
 @endsection
