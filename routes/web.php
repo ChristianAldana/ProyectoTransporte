@@ -14,10 +14,8 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-<<<<<<< HEAD
-=======
-//<<<<<<< Brandon
->>>>>>> master
+
+
     return view('Home');
 });
 
@@ -32,24 +30,23 @@ Route::get('views/auth/register', function () {
 
 
 //Route::get('/', function () {
-<<<<<<< HEAD
+
 // return view('Transportista/regTransporte');
 //});
 
-=======
+
   //  return view('Transportista/regTransporte');
 //});
 
-=======
-    return view('Transportista/regTransporte');
-});
 
-//>>>>>>> master
->>>>>>> master
+//    return view('Transportista/regTransporte');
+//});
+
+
 Route::get('/show/{id}',[IngresoController::class,'showIn'])->name('ingreso.show');
 
 
-RUTAS TRANSPORTISTA
+
 Route::get('/transportista',[\App\Http\Controllers\TransportistaController::class,'index'])->name('transportista.index');
 Route::get('/create-transp',[\App\Http\Controllers\TransportistaController::class,'create'])->name('transportista.create');
 Route::post('/store-transp',[\App\Http\Controllers\TransportistaController::class,'store'])->name('transportista.store');
@@ -68,8 +65,7 @@ Route::get('/show/{id}',[IngresoController::class,'create'])->name('cargas.creat
 Route::get('/show/{id}',[IngresoController::class,'create'])->name('predios.create');
 Route::get('/show/{id}',[IngresoController::class,'create'])->name('bodegas.create');
 
-<<<<<<< HEAD
+
 Route::get('/show/{id}',[IngresoController::class,'showIn'])->name('ingreso.show');
-=======
 //Route::get('/show/{id}',[IngresoController::class,'showIn'])->name('ingreso.show');
->>>>>>> master
+
