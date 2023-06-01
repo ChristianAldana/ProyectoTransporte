@@ -69,3 +69,9 @@ Route::get('/show/{id}',[IngresoController::class,'create'])->name('bodegas.crea
 Route::get('/show/{id}',[IngresoController::class,'showIn'])->name('ingreso.show');
 //Route::get('/show/{id}',[IngresoController::class,'showIn'])->name('ingreso.show');
 
+
+Auth::routes();
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
