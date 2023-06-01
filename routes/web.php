@@ -14,7 +14,10 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
+<<<<<<< HEAD
+=======
 //<<<<<<< Brandon
+>>>>>>> master
     return view('Home');
 });
 
@@ -29,6 +32,11 @@ Route::get('views/auth/register', function () {
 
 
 //Route::get('/', function () {
+<<<<<<< HEAD
+// return view('Transportista/regTransporte');
+//});
+
+=======
   //  return view('Transportista/regTransporte');
 //});
 
@@ -37,6 +45,7 @@ Route::get('views/auth/register', function () {
 });
 
 //>>>>>>> master
+>>>>>>> master
 Route::get('/show/{id}',[IngresoController::class,'showIn'])->name('ingreso.show');
 
 
@@ -59,4 +68,8 @@ Route::get('/show/{id}',[IngresoController::class,'create'])->name('cargas.creat
 Route::get('/show/{id}',[IngresoController::class,'create'])->name('predios.create');
 Route::get('/show/{id}',[IngresoController::class,'create'])->name('bodegas.create');
 
+<<<<<<< HEAD
+Route::get('/show/{id}',[IngresoController::class,'showIn'])->name('ingreso.show');
+=======
 //Route::get('/show/{id}',[IngresoController::class,'showIn'])->name('ingreso.show');
+>>>>>>> master
