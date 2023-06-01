@@ -2,54 +2,38 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\transportista;
+use App\Models\Transportista;
 use Illuminate\Http\Request;
 use RealRashid\SweetAlert\Facades\Alert;
 
 class TransportistaController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
     public function index()
     {
-        //
+        $datos = Transportista::orderBy('id','asc')->paginate(10);
+        return view('Transportista/tabla-transp', compact('datos'));
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
     public function create()
     {
-        $transportista = Transportista::all(); 
-
-        return view('in', ['transportista' => $transportista]);
+        return view('transporte.regTransporte');
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
     public function store(Request $request)
     {
-        //
-    }
+        $transportista = new Transportista();
+        $transportista -> nombre = $request ->post('nombre');
+        $transportista -> razon_social = $request->post('razon_social');
+        $transportista -> direccion = $request->post('direccion');
+        $transportista -> save();
+        //Alert::toast('Registrado','success');
+        return redirect() -> route('transportista.index');
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\Models\transportista  $transportista
-     * @return \Illuminate\Http\Response
-     */
-    public function show(transportista $transportista)
+    }
+    public function show($id)
     {
-        //
+        $transportista = Transportista::find($id);
+        return view('Transportista/eliminar-transp', compact('transportista'));
     }
 
     /**

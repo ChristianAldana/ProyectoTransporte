@@ -37,6 +37,8 @@ class IngresoController extends Controller
         $predios = Predio::all();
         $bodegas = Bodega::all();
 
+        return view('ingreso.in'); 
+
         return view('in', compact('transportistas ', 'camiones', 'pilotos', 'cargas', 'predios', 'bodegas'));
         
     }
@@ -48,7 +50,22 @@ class IngresoController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
-    {
+    {   
+        $ingresos = new Ingreso;
+        $ingresos ->origen = $request->input ('origen');
+        $ingresos ->fechaIn = $request->input ('fechaIn');
+        $ingresos ->horaIn = $request->input ('horaIn');
+        $ingresos ->transportistaIn = $request->input ('transportistaIn');
+        $ingresos ->matriculaIn = $request->input ('matriculaIn');
+        $ingresos ->pilotoIn = $request->input ('pilotoIn');
+        $ingresos ->cargaIn = $request->input ('cargaIn');
+        $ingresos ->predioIn = $request->input ('predioIn');
+        $ingresos ->bodegaIn = $request->input ('bodegaIn');
+        $ingresos ->save();
+
+        Ingreso::create($request->all());
+
+
         $this->validate($request, [
             'origen' => 'required',
             'fechaIn' => 'required',
@@ -60,6 +77,8 @@ class IngresoController extends Controller
             'predioIn' => 'required',
             'bodegaIn' => 'required',
         ]);
+
+        return 'Store';
     }
 
     /**
@@ -68,9 +87,21 @@ class IngresoController extends Controller
      * @param  \App\Models\Ingreso  $ingreso
      * @return \Illuminate\Http\Response
      */
-    public function show(Ingreso $ingreso)
-    {   
-  
+    public function showIn(Ingreso $ingreso)
+    {
+        /*$transportista = transportista::all();
+        $camion = camion::all();
+        $piloto = piloto::all();
+        $carga = carga::all();
+        $predio = predio::all();
+        $bodega = bodega::all();
+
+        return view('in', compact('transportista ', 'camion', 'piloto', 'carga', 'predio', 'bodega'));
+        */
+        $ingreso = Ingreso::with(['transportista', 'camion', 'piloto', 'carga', 'predio', 'bodega'])->get();
+
+        return view('in', ['ingreso' => $ingreso]);
+
 
     }
 

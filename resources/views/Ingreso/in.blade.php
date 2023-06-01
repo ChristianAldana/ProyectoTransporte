@@ -16,6 +16,11 @@
 				<h4>Registro de ingresos a predio</h4>
 			</div>
 		</div>
+	
+		<form action="/Ingreso " method="POST" role="form">
+
+		{{ csrf_field( ) }}
+
 		<div class="col-md-9">
 			<div class="contact-form">
 				
@@ -126,5 +131,6 @@
 				</div>
 			</div>
 		</div>
+	  </form>
 	</div>
 </div>
