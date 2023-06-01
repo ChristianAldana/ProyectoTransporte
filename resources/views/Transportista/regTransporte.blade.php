@@ -4,7 +4,11 @@
 
 
 <link href="{{ asset('assets/form.css') }}" rel="stylesheet">
+@extends('layouts/layout')
 
+@section('Registrar', 'Transportista')
+
+@section('content')
 <div class="container contact">
 	<div class="row">
 		<div class="col-md-3">
@@ -15,31 +19,38 @@
 			</div>
 		</div>
 		<div class="col-md-9">
-			<div class="contact-form">
+			<form class="contact-form">
 				<div class="form-group">
-				  <label class="control-label col-sm-2" for="nombre">Nombre</label>
-				  <div class="col-sm-10">
-					<input type="text" class="form-control" id="nombre" placeholder="Ingresa el Nombre" name="nombre">
-				  </div>
-				</div>
-                <div class="form-group">
-                    <label class="control-label col-sm-4" for="razon_social">Razon Social</label>
-                    <div class="col-sm-10">
-                        <input type="text" class="form-control" id="razon_social" placeholder="Ingresa la Razon Social" name="razon_social">
+                    <form action="{{route('transportista.store')}}" method="POST"></form>
+                    @csrf
+                    <label class="control-label col-sm-2" for="nombre">Nombre</label>
+                      <div class="col-sm-10">
+                        <input type="text" class="form-control" id="nombre" placeholder="Ingresa el Nombre" name="nombre">
+                      </div>
                     </div>
-                </div>
-				<div class="form-group">
-				  <label class="control-label col-sm-2" for="direccion">Direccion</label>
-				  <div class="col-sm-10">
-					<input type="text" class="form-control" id="direccion" placeholder="Ingresa la direccion" name="direccion">
-				  </div>
-				</div>
-				<div class="form-group">
-				  <div class="col-sm-offset-2 col-sm-10">
-                  <button type="submit" class="btn btn-default">Submit</button>
-				  </div>
-				</div>
+                    <div class="form-group">
+                        <label class="control-label col-sm-4" for="razon_social">Razon Social</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" id="razon_social" placeholder="Ingresa la Razon Social" name="razon_social">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                      <label class="control-label col-sm-2" for="direccion">Direccion</label>
+                      <div class="col-sm-10">
+                        <input type="text" class="form-control" id="direccion" placeholder="Ingresa la direccion" name="direccion">
+                      </div>
+                    </div>
+                    <div class="form-group">
+                      <div class="col-sm-offset-2 col-sm-10">
+                          <a href="{{route('transportista.index')}}" class="btn btn-outline-dark">
+                              Regresar
+                          </a>
+                      <button type="submit" class="btn btn-outline-info">Agregar</button>
+                      </div>
+                    </div>
+                </form>
 			</div>
 		</div>
 	</div>
 </div>
+@endsection
