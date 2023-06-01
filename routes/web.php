@@ -2,21 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider within a group which
-| contains the "web" middleware group. Now create something great!
-|
-*/
-
 Route::get('/', function () {
-
-
-    return view('Home');
+    return view('Transportista/regTransporte');
 });
 
 //RUTAS DE LOGIN
@@ -28,12 +15,10 @@ Route::get('views/auth/register', function () {
     return view('auth/register');
 })->name('register');
 
-
 //Route::get('/', function () {
 
 // return view('Transportista/regTransporte');
 //});
-
 
   //  return view('Transportista/regTransporte');
 //});
@@ -45,15 +30,14 @@ Route::get('views/auth/register', function () {
 
 Route::get('/show/{id}',[IngresoController::class,'showIn'])->name('ingreso.show');
 
-
-
+//RUTAS TRANSPORTISTA
 Route::get('/transportista',[\App\Http\Controllers\TransportistaController::class,'index'])->name('transportista.index');
 Route::get('/create-transp',[\App\Http\Controllers\TransportistaController::class,'create'])->name('transportista.create');
 Route::post('/store-transp',[\App\Http\Controllers\TransportistaController::class,'store'])->name('transportista.store');
-Route::get('/edit-transp/{id}',[\App\Http\Controllers\TransportistaController::class,'edit'])->name('transportista.edit');
-Route::put('/update-transp/{id}',[\App\Http\Controllers\TransportistaController::class,'update'])->name('transportista.update');
-Route::get('/show-transp/{id}',[\App\Http\Controllers\TransportistaController::class,'show'])->name('transportista.show');
-Route::delete('/destroy-transp/{id}', [\App\Http\Controllers\TransportistaController::class,'destroy'])->name('transportista.destroy');
+Route::get('/edit-transp/{id_transportista}',[\App\Http\Controllers\TransportistaController::class,'edit'])->name('transportista.edit');
+Route::put('/update-transp/{id_transportista}',[\App\Http\Controllers\TransportistaController::class,'update'])->name('transportista.update');
+Route::get('/show-transp/{id_transportista}',[\App\Http\Controllers\TransportistaController::class,'show'])->name('transportista.show');
+Route::delete('/destroy-transp/{id_transportista}', [\App\Http\Controllers\TransportistaController::class,'destroy'])->name('transportista.destroy');
 
 
 
@@ -69,9 +53,7 @@ Route::get('/show/{id}',[IngresoController::class,'create'])->name('bodegas.crea
 Route::get('/show/{id}',[IngresoController::class,'showIn'])->name('ingreso.show');
 //Route::get('/show/{id}',[IngresoController::class,'showIn'])->name('ingreso.show');
 
-
-Auth::routes();
-
-Auth::routes();
+//Auth::routes();
+//Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
