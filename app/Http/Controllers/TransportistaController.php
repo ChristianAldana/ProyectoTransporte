@@ -10,7 +10,7 @@ class TransportistaController extends Controller
 {
     public function index()
     {
-        $datos = Transportista::orderBy('id_transportista', 'asc')->paginate(10);
+        $datos = Transportista::orderBy('id_transportista', 'asc')->paginate(6);
         return view('Transportista/tabla-transp', compact('datos'));
     }
     public function create()
