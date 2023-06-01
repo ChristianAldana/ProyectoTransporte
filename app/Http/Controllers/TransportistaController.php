@@ -10,13 +10,12 @@ class TransportistaController extends Controller
 {
     public function index()
     {
-        $datos = Transportista::orderBy('id','asc')->paginate(10);
+        $datos = Transportista::all();
         return view('Transportista/tabla-transp', compact('datos'));
     }
-
     public function create()
     {
-        return view('regTransporte');
+        return view('Transportista/regTransporte');
     }
 
     public function store(Request $request)
@@ -26,7 +25,7 @@ class TransportistaController extends Controller
         $transportista -> razon_social = $request->post('razon_social');
         $transportista -> direccion = $request->post('direccion');
         $transportista -> save();
-        //Alert::toast('Registrado','success');
+        Alert::toast('Registrado','success');
         return redirect() -> route('transportista.index');
 
     }
@@ -35,38 +34,26 @@ class TransportistaController extends Controller
         $transportista = Transportista::find($id);
         return view('Transportista/eliminar-transp', compact('transportista'));
     }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Models\transportista  $transportista
-     * @return \Illuminate\Http\Response
-     */
-    public function edit(transportista $transportista)
+    public function edit($id)
     {
-        //
+        $transportista = Transportista::find($id);
+        return view('Transportista/actualizar-transp', compact('transportista'));
     }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\transportista  $transportista
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, transportista $transportista)
+    public function update(Request $request, $id)
     {
-        //
+        $transportista = Transportista::find($id);
+        $transportista -> nombre = $request -> post('nombre');
+        $transportista -> razon_social = $request->post('razon_social');
+        $transportista -> direccion = $request->post('direccion');
+        $transportista -> save();
+        Alert::toast('Actualizado!','info');
+        return redirect() -> route('transportista.index');
     }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  \App\Models\transportista  $transportista
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy(transportista $transportista)
+    public function destroy($id)
     {
-        //
+        $transportista = Transportista::find($id);
+        $transportista -> delete();
+        Alert::toast('Eliminado con éxito', 'error');
+        return redirect()->route("transportista.index");
     }
 }

@@ -1,115 +1,50 @@
-@extends('layouts/layout')
+@extends('layouts/inicio')
 
-@section('title', 'Page Title')
+@section('tituloPagina', 'home con laravel')
 
-@section('content')
-    <!DOCTYPE html>
-    <html lang="en">
-    <head>
+@section('contenido')
 
 
-{{--    Parte del login christian--}}
-        <div class="container">
-            <div class="row justify-content-center">
-                <div class="col-md-8">
-                    <div class="card">
-                        <div class="card-header">{{ __('Dashboard') }}</div>
+    </div>
 
-                        <div class="card-body">
-                            @if (session('status'))
-                                <div class="alert alert-success" role="alert">
-                                    {{ session('status') }}
-                                </div>
-                            @endif
-
-                            {{ __('You are logged in!') }}
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    {{--    Parte del login christian--}}
-
-
-
-
-    <!-- basic -->
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <!-- mobile metas -->
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="viewport" content="initial-scale=1, maximum-scale=1">
-    <!-- site metas -->
-    <title>ogistic</title>
-    <meta name="keywords" content="">
-    <meta name="description" content="">
-    <meta name="author" content="">
-    <!-- bootstrap css -->
-    <link rel="stylesheet" href="css/bootstrap.min.css">
-    <!-- style css -->
-    <link rel="stylesheet" href="css/Home.css">
-    <!-- Responsive-->
-    <link rel="stylesheet" href="css/responsive.css">
-    <!-- fevicon -->
-    <link rel="icon" href="images/fevicon.png" type="image/gif" />
-    <!-- Scrollbar Custom CSS -->
-    <link rel="stylesheet" href="css/jquery.mCustomScrollbar.min.css">
-    <!-- Tweaks for older IEs-->
-    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.css" media="screen">
-    <!--[if lt IE 9]>
-    <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
-    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script><![endif]-->
-</head>
-<!-- body -->
-<body class="main-layout">
-<!-- loader  -->
-<div class="loader_bg">
-    <div class="loader"><img src="images/loading.gif" alt="#" /></div>
-</div>
-<!-- end loader -->
 <div id="mySidepanel" class="sidepanel">
     <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
-    <a href="index.html">Home </a>
-    <a href="#about">About</a>
-    <a href="#service">Services  </a>
-    <a href="#vehicles">Our Vehicles</a>
-    <a href="#testimonial">Testimonial</a>
-    <a href="#contact">Contact</a>
+    <a href="index.html">Inicio </a>
+    <a href="#about">Nosotros</a>
+    <a href="#service">Servicios  </a>
+    <a href="#vehicles">Vehiculos</a>
+    <a href="#testimonial">Comentario</a>
 </div>
 <!-- header -->
 <header>
-    <!-- header inner -->
     <div class="header">
         <div class="container-fluid">
             <div class="row">
                 <div class="col-md-4 col-sm-4">
-                    <div class="logo">
-                        <a href="index.html"><img src="images/logo.png" alt="#" /></a>
-                    </div>
                 </div>
                 <div class="col-md-8 col-sm-8">
                     <div class="right_bottun">
                         <ul class="conat_info d_none ">
+
+
+                            <a href="{{ route('login') }}";  class="btn btn-primary"; >login</a>
                             <li><a href="#"><i class="fa fa-user" aria-hidden="true"></i></a></li>
+                            <a href="{{ route('register') }}" class="btn btn-primary">registrar</a>
                             <li><a href="#"><i class="fa fa-search" aria-hidden="true"></i></a></li>
                         </ul>
-                        <button class="openbtn" onclick="openNav()"><img src="images/menu_icon.png" alt="#"/> </button>
+                        <button class="openbtn" onclick="openNav()"><img src={{asset('assets/menu_icon.png')}} alt="#" /> </button>
                     </div>
                 </div>
             </div>
         </div>
     </div>
 </header>
-<!-- end header inner -->
-<!-- end header -->
+<!-- fin del header -->
+
 <!-- banner -->
 <section class="banner_main">
     <div id="banner1" class="carousel slide banner_slide" data-ride="carousel">
         <ol class="carousel-indicators">
-            <li data-target="#banner1" data-slide-to="0" class="active"></li>
-            <li data-target="#banner1" data-slide-to="1"></li>
-            <li data-target="#banner1" data-slide-to="2"></li>
         </ol>
         <div class="carousel-inner">
             <div class="carousel-item active">
@@ -118,132 +53,22 @@
                         <div class="row">
                             <div class="col-md-7 col-lg-5">
                                 <div class="text-bg">
-                                    <h1>Best Logistic Company</h1>
-                                    <span>Contrary to popular belief, Lorem Ipsum is not simply random text. It has i</span>
-                                    <a class="read_more" href="#">Contact Us</a>
+                                    <h1>Servicio de transportes S.A.</h1>
+                                    <span>Empresa creadora de programas para registro de camiones</span>
                                 </div>
                             </div>
                             <div class="col-md-12 col-lg-7">
                                 <div class="row">
                                     <div class="col-md-6">
                                         <div class="ban_track">
-                                            <figure><img src="images/track.png" alt="#"/></figure>
+                                            <figure><img src={{asset('assets/track.png')}} alt="#" /></figure>
                                         </div>
                                     </div>
                                     <div class="col-md-6">
                                         <form class="transfot">
                                             <div class="col-md-12">
-                                                <span>Professional Services</span>
-                                                <h3>Get your transport quote</h3>
-                                            </div>
-                                            <div class="col-md-12">
-                                                <input class="transfot_form" placeholder="Location" type="text" name="Location">
-                                            </div>
-                                            <div class="col-md-12">
-                                                <input class="transfot_form" placeholder="To destination" type="text" name="To destination">
-                                            </div>
-                                            <div class="col-md-12">
-                                                <input class="transfot_form" placeholder="Email" type="text" name="Email">
-                                            </div>
-                                            <div class="col-md-12">
-                                                <input class="transfot_form" placeholder="Contact Number" type="text" name="Contact Number">
-                                            </div>
-                                            <div class="col-md-12">
-                                                <button class="get_now">Get Now quote</button>
-                                            </div>
-                                        </form>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="carousel-item">
-                <div class="container-fluid">
-                    <div class="carousel-caption">
-                        <div class="row">
-                            <div class="col-md-7 col-lg-5">
-                                <div class="text-bg">
-                                    <h1>Best Logistic Company</h1>
-                                    <span>Contrary to popular belief, Lorem Ipsum is not simply random text. It has i</span>
-                                    <a class="read_more" href="#">Contact Us</a>
-                                </div>
-                            </div>
-                            <div class="col-md-12 col-lg-7">
-                                <div class="row">
-                                    <div class="col-md-6">
-                                        <div class="ban_track">
-                                            <figure><img src="images/track.png" alt="#"/></figure>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <form class="transfot">
-                                            <div class="col-md-12">
-                                                <span>Professional Services</span>
-                                                <h3>Get your transport quote</h3>
-                                            </div>
-                                            <div class="col-md-12">
-                                                <input class="transfot_form" placeholder="Location" type="text" name="Location">
-                                            </div>
-                                            <div class="col-md-12">
-                                                <input class="transfot_form" placeholder="To destination" type="text" name="To destination">
-                                            </div>
-                                            <div class="col-md-12">
-                                                <input class="transfot_form" placeholder="Email" type="text" name="Email">
-                                            </div>
-                                            <div class="col-md-12">
-                                                <input class="transfot_form" placeholder="Contact Number" type="text" name="Contact Number">
-                                            </div>
-                                            <div class="col-md-12">
-                                                <button class="get_now">Get Now quote</button>
-                                            </div>
-                                        </form>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="carousel-item">
-                <div class="container-fluid">
-                    <div class="carousel-caption">
-                        <div class="row">
-                            <div class="col-md-7 col-lg-5">
-                                <div class="text-bg">
-                                    <h1>Best Logistic Company</h1>
-                                    <span>Contrary to popular belief, Lorem Ipsum is not simply random text. It has i</span>
-                                    <a class="read_more" href="#">Contact Us</a>
-                                </div>
-                            </div>
-                            <div class="col-md-12 col-lg-7">
-                                <div class="row">
-                                    <div class="col-md-6">
-                                        <div class="ban_track">
-                                            <figure><img src="images/track.png" alt="#"/></figure>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <form class="transfot">
-                                            <div class="col-md-12">
-                                                <span>Professional Services</span>
-                                                <h3>Get your transport quote</h3>
-                                            </div>
-                                            <div class="col-md-12">
-                                                <input class="transfot_form" placeholder="Location" type="text" name="Location">
-                                            </div>
-                                            <div class="col-md-12">
-                                                <input class="transfot_form" placeholder="To destination" type="text" name="To destination">
-                                            </div>
-                                            <div class="col-md-12">
-                                                <input class="transfot_form" placeholder="Email" type="text" name="Email">
-                                            </div>
-                                            <div class="col-md-12">
-                                                <input class="transfot_form" placeholder="Contact Number" type="text" name="Contact Number">
-                                            </div>
-                                            <div class="col-md-12">
-                                                <button class="get_now">Get Now quote</button>
+                                                <span>Servicio Profesional</span>
+                                                <h3>Proveedor de servicios Internacional</h3>
                                             </div>
                                         </form>
                                     </div>
@@ -254,44 +79,38 @@
                 </div>
             </div>
         </div>
-        <a class="carousel-control-prev" href="#banner1" role="button" data-slide="prev">
-            <i class="fa fa-angle-left" aria-hidden="true"></i>
-        </a>
-        <a class="carousel-control-next" href="#banner1" role="button" data-slide="next">
-            <i class="fa fa-angle-right" aria-hidden="true"></i>
-        </a>
-    </div>
 </section>
-<!-- end banner -->
-<!-- about section -->
+<!-- fin del banner -->
+
+<!-- Sección de comentario -->
 <div id="about" class="about ">
     <div class="container">
         <div class="row d_flex">
             <div class="col-md-6">
                 <div class="about_right">
-                    <figure><img src="images/about.png" alt="#"/></figure>
+                    <figure><img src={{asset('assets/logo4.jpeg')}} alt="#" /></figure>
                 </div>
             </div>
             <div class="col-md-6">
                 <div class="titlepage">
-                    <h2>About Us</h2>
-                    <p> There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, There
-                    </p>
-                    <a class="read_more" href="#">Read More</a>
+                    <h2>Nosotros</h2>
+                    <p>Somos una empresa especializada en programas de registro de transportes. Nuestros programas simplifican la gestión de flotas, optimizan rutas y brindan datos en tiempo real. Con tecnología innovadora y enfoque centrado en el cliente, impulsamos la eficiencia y el crecimiento en el sector del transporte.</p>
+                    <a class="read_more" href="#">Volver</a>
                 </div>
             </div>
         </div>
     </div>
 </div>
-<!-- about section -->
-<!-- service section -->
+<!-- Fin de comentario -->
+
+<!-- Sección de servicios -->
 <div id="service" class="service">
     <div class="container">
         <div class="row">
             <div class="col-md-10 offset-md-1">
                 <div class="titlepage">
-                    <h2>Our Services</h2>
-                    <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, There </p>
+                    <h2>Servicios</h2>
+                    <p>Ventajas de nuestros servicios</p>
                 </div>
             </div>
         </div>
@@ -299,29 +118,29 @@
             <div class="col-md-12">
                 <div class="service_main">
                     <div class="service_box blu_colo">
-                        <i><img src="images/ser1.png" alt="#"/></i>
-                        <h4>FLY ANYWHERE</h4>
+                        <i><img src={{asset('assets/ser1.png')}} alt="#" /></i>
+                        <h4>Estable</h4>
                     </div>
                     <div class="service_box yelldark_colo">
-                        <i><img src="images/ser2.png" alt="#"/></i>
-                        <h4>Cargo service</h4>
+                        <i><img src={{asset('assets/ser2.png')}} alt="#" /></i>
+                        <h4>Eficiente</h4>
                     </div>
                     <div class="service_box yell_colo">
-                        <i><img src="images/ser3.png" alt="#"/></i>
-                        <h4> COURIER SERVICES</h4>
+                        <i><img src={{asset('assets/ser3.png')}} alt="#" /></i>
+                        <h4>Rapido</h4>
                     </div>
                     <div class="service_box yelldark_colo">
-                        <i><img src="images/ser4.png" alt="#"/></i>
-                        <h4>BOX STORAGE</h4>
+                        <i><img src={{asset('assets/ser4.png')}} alt="#" /></i>
+                        <h4>Practico</h4>
                     </div>
                     <div class="service_box yell_colo">
-                        <i><img src="images/ser5.png" alt="#"/></i>
-                        <h4>100% safe</h4>
+                        <i><img src={{asset('assets/ser5.png')}} alt="#" /></i>
+                        <h4>Seguro</h4>
                     </div>
                 </div>
             </div>
             <div class="col-md-12">
-                <a class="read_more" href="#">Read More</a>
+                <a class="read_more" href="#">Volver</a>
             </div>
         </div>
     </div>
@@ -333,17 +152,14 @@
         <div class="row">
             <div class="col-md-12">
                 <div class="titlepage">
-                    <h2>Our Vehicles</h2>
-                    <p>nternet. It uses a dictionary of over 200 Latin words, combined with .</p>
+                    <h2>Vehiculos</h2>
+                    <p></p>
                 </div>
             </div>
         </div>
     </div>
     <div id="veh" class="carousel slide" data-ride="carousel">
         <ol class="carousel-indicators">
-            <li data-target="#veh" data-slide-to="0" class="active"></li>
-            <li data-target="#veh" data-slide-to="1"></li>
-            <li data-target="#veh" data-slide-to="2"></li>
         </ol>
         <div class="carousel-inner">
             <div class="carousel-item active">
@@ -352,66 +168,18 @@
                         <div class="row">
                             <div class="col-md-4">
                                 <div class="vehicles_truck">
-                                    <figure><img src="images/truc1.png" alt="#"/></figure>
+                                    <figure><img src={{asset('assets/truc1.png')}} alt="#" /></figure>
                                 </div>
                             </div>
                             <div class="col-md-4">
                                 <div class="vehicles_truck">
-                                    <figure><img src="images/truc2.png" alt="#"/></figure>
+                                    <figure><img src={{asset('assets/truc2.png')}} alt="#" /></figure>
                                 </div>
-                                <h3 class="blac_co">Truck</h3>
+                                <h3 class="blac_co"></h3>
                             </div>
                             <div class="col-md-4">
                                 <div class="vehicles_truck">
-                                    <figure><img src="images/truc3.png" alt="#"/></figure>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="carousel-item">
-                <div class="container">
-                    <div class="carousel-caption">
-                        <div class="row">
-                            <div class="col-md-4">
-                                <div class="vehicles_truck">
-                                    <figure><img src="images/truc1.png" alt="#"/></figure>
-                                </div>
-                            </div>
-                            <div class="col-md-4">
-                                <div class="vehicles_truck">
-                                    <figure><img src="images/truc2.png" alt="#"/></figure>
-                                </div>
-                                <h3 class="blac_co">Truck</h3>
-                            </div>
-                            <div class="col-md-4">
-                                <div class="vehicles_truck">
-                                    <figure><img src="images/truc3.png" alt="#"/></figure>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="carousel-item">
-                <div class="container">
-                    <div class="carousel-caption">
-                        <div class="row">
-                            <div class="col-md-4">
-                                <div class="vehicles_truck">
-                                    <figure><img src="images/truc1.png" alt="#"/></figure>
-                                </div>
-                            </div>
-                            <div class="col-md-4">
-                                <div class="vehicles_truck">
-                                    <figure><img src="images/truc2.png" alt="#"/></figure>
-                                </div>
-                                <h3 class="blac_co">Truck</h3>
-                            </div>
-                            <div class="col-md-4">
-                                <div class="vehicles_truck">
-                                    <figure><img src="images/truc3.png" alt="#"/></figure>
+                                    <figure><img src={{asset('assets/truc3.png')}} alt="#" /></figure>
                                 </div>
                             </div>
                         </div>
@@ -419,20 +187,13 @@
                 </div>
             </div>
         </div>
-        <a class="carousel-control-prev" href="#veh" role="button" data-slide="prev">
-            <i class="fa fa-angle-left" aria-hidden="true"></i>
-        </a>
-        <a class="carousel-control-next" href="#veh" role="button" data-slide="next">
-            <i class="fa fa-angle-right" aria-hidden="true"></i>
-        </a>
-    </div>
-    <div class="container">
-        <div class="row">
-            <div class="col-md-12">
-                <a class="read_more" href="#">Read More</a>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <a class="read_more" href="#">Read More</a>
+                </div>
             </div>
         </div>
-    </div>
 </section>
 <!-- end vehicles section -->
 <!-- testimonial section -->
@@ -441,8 +202,7 @@
         <div class="row">
             <div class="col-md-12">
                 <div class="titlepage">
-                    <h2>Testimonials</h2>
-                    <p>nternet. It uses a dictionary of over 200 Latin words, combined with .</p>
+                    <h2>Comentario</h2>
                 </div>
             </div>
         </div>
@@ -450,9 +210,6 @@
             <div class="col-md-12">
                 <div id="myCarousel" class="carousel slide testimonial_Carousel " data-ride="carousel">
                     <ol class="carousel-indicators">
-                        <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-                        <li data-target="#myCarousel" data-slide-to="1"></li>
-                        <li data-target="#myCarousel" data-slide-to="2"></li>
                     </ol>
                     <div class="carousel-inner">
                         <div class="carousel-item active">
@@ -461,9 +218,9 @@
                                     <div class="row">
                                         <div class="col-md-12">
                                             <div class="testimonial_box">
-                                                <figure><img src="images/our.png" alt="#"/></figure>
-                                                <h3>Luda Johnson <br><span class="kisu">( Ceo)</span></h3>
-                                                <p>Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 year</p>
+                                                <figure></figure>
+                                                <h3>Transportes S.A. <br><span class="kisu">( Ceo)</span></h3>
+                                                <p>Al crear un proyecto como este, nos brindó la oportunidad de colaborar de manera profesional, dándonos experiencia en el campo de la programación, logramos obtener conocimientos, además de lograr una vision más profunda en las necesidades de la industria del transporte </p>
                                             </div>
                                         </div>
                                     </div>
@@ -476,7 +233,7 @@
                                     <div class="row">
                                         <div class="col-md-12">
                                             <div class="testimonial_box">
-                                                <figure><img src="images/our.png" alt="#"/></figure>
+                                                <figure><img src="#" alt="#"/></figure>
                                                 <h3>Luda Johnson <br><span class="kisu">( Ceo)</span></h3>
                                                 <p>Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 year</p>
                                             </div>
@@ -492,7 +249,7 @@
                                         <div class="col-md-12">
                                             <div class="full cross_layout">
                                                 <div class="testimonial_box">
-                                                    <figure><img src="images/our.png" alt="#"/></figure>
+                                                    <figure><img src="#" alt="#"/></figure>
                                                     <h3>Luda Johnson <br><span class="kisu">( Ceo)</span></h3>
                                                     <p>Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 year</p>
                                                 </div>
@@ -503,18 +260,12 @@
                             </div>
                         </div>
                     </div>
-                    <a class="carousel-control-prev" href="#myCarousel" role="button" data-slide="prev">
-                        <i class="fa fa-caret-left" aria-hidden="true"></i>
-                    </a>
-                    <a class="carousel-control-next" href="#myCarousel" role="button" data-slide="next">
-                        <i class="fa fa-caret-right" aria-hidden="true"></i>
-                    </a>
                 </div>
             </div>
         </div>
         <div class="row">
             <div class="col-md-12">
-                <a class="read_more" href="#">Read More</a>
+                <a class="read_more" href="#">Volver</a>
             </div>
         </div>
     </div>
@@ -526,76 +277,31 @@
         <div class="row">
             <div class="col-md-12">
                 <div class="titlepage">
-                    <h2>Why Choose Us</h2>
+                    <h2>Información de la empresa</h2>
                 </div>
             </div>
         </div>
         <div class="row">
             <div class="col-md-5">
                 <div class="choose_box">
-                    <i><img src="images/why1.png" alt="#"/></i>
-                    <h3>Our Vission</h3>
-                    <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters,</p>
-                    <a class="read_more" href="#">Read More</a>
+                    <i><img src={{asset('assets/why1.png')}} alt="#" /></i>
+                    <h3>Visión</h3>
+                    <p>Nuestra visión es ser líderes en soluciones tecnológicas para el registro de transportes, simplificando y optimizando el proceso. Buscamos establecer relaciones sólidas con nuestros clientes, brindando productos de calidad y un excelente servicio. Nuestro objetivo es impulsar la transformación digital en el sector del transporte, ayudando a las empresas a optimizar sus operaciones y tomar decisiones informadas.</p>
+                    <a class="read_more" href="#">Volver</a>
                 </div>
             </div>
             <div class="col-md-5 offset-md-2">
                 <div class="choose_box">
-                    <i><img src="images/why2.png" alt="#"/></i>
-                    <h3>Estimate Shipping</h3>
-                    <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters,</p>
-                    <a class="read_more" href="#">Read More</a>
+                    <i><img src={{asset('assets/why2.png')}} alt="#" /></i>
+                    <h3>Misión</h3>
+                    <p>Nuestra misión es ofrecer soluciones para el registro de transportes, brindando herramientas eficientes y fiables que simplifiquen la gestión de flotas. Nos comprometemos a proporcionar a nuestros clientes una plataforma intuitiva y fácil de usar, que les permita registrar y controlar sus transportes de manera precisa y segura.</p>
+                    <a class="read_more" href="#">Volver</a>
                 </div>
             </div>
         </div>
     </div>
 </div>
 <!-- end choose section -->
-<!-- contact section -->
-<div id="contact" class="contact">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-12">
-                <div class="titlepage">
-                    <h2>Requst A call  for You</h2>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="con_bg">
-        <div class="container-fluid">
-            <div class="row">
-                <div class="col-md-5">
-                    <form id="request" class="main_form">
-                        <div class="row">
-                            <div class="col-md-12 ">
-                                <input class="contactus" placeholder="Name" type="type" name="Name">
-                            </div>
-                            <div class="col-md-12">
-                                <input class="contactus" placeholder="Email" type="type" name="Email">
-                            </div>
-                            <div class="col-md-12">
-                                <input class="contactus" placeholder="Phone Number" type="type" name="Phone Number">
-                            </div>
-                            <div class="col-md-12">
-                                <input class="contactusmess" placeholder="Message" type="type" Message="Name">
-                            </div>
-                            <div class="col-md-12">
-                                <button class="send_btn">Send</button>
-                            </div>
-                        </div>
-                    </form>
-                </div>
-                <div class="col-md-7">
-                    <div class="co_tru">
-                        <figure><img src="images/truc4.png" alt="#"/></figure>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-<!-- end contact section -->
 <!--  footer -->
 <footer>
     <div class="footer bottom_cross1">
@@ -603,20 +309,19 @@
             <div class="row">
                 <div class="col-md-4">
                     <ul class="location_icon">
-                        <li><a href="#"><i class="fa fa-map-marker" aria-hidden="true"></i></a> Address : Lorem Ipsum <br> is simply dummy
+                        <li><a href="#"><i class="fa fa-map-marker" aria-hidden="true"></i></a>Encuentranos en: Unversidad Mariano Galvez (UMG) <br>
                         </li>
-                        <li><a href="#"><i class="fa fa-phone" aria-hidden="true"></i></a>Phone :  +(1234) 567 890</li>
-                        <li><a href="#"><i class="fa fa-envelope" aria-hidden="true"></i></a>Email : demo@gmail.com</li>
+                        <li><a href="#"><i class="fa fa-phone" aria-hidden="true"></i></a>Telefono :  +(505) 5678843</li>
+                        <li><a href="#"><i class="fa fa-envelope" aria-hidden="true"></i></a>Correo : tranportes_s.a.@gmail.com</li>
                     </ul>
                     <form class="bottom_form">
-                        <h3>Newsletter</h3>
-                        <input class="enter" placeholder="Enter your email" type="text" name="Enter your email">
-                        <button class="sub_btn">subscribe</button>
+                        <h3></h3>
+
                     </form>
                 </div>
                 <div class="col-md-8">
                     <div class="map">
-                        <figure><img src="images/map.png" alt="#"/></figure>
+                        <figure><img src={{asset('assets/map.png')}} alt="#" /></figure>
                     </div>
                 </div>
             </div>
@@ -625,7 +330,7 @@
             <div class="container">
                 <div class="row">
                     <div class="col-md-12">
-                        <p>© 2019 All Rights Reserved. Design by<a href="https://html.design/"> Free Html Templates</a></p>
+                        <p>© 2023 All Rights Reserved. Design by<a href="https://html.design/">Transportes S.A.</a></p>
                     </div>
                 </div>
             </div>
@@ -650,7 +355,5 @@
         document.getElementById("mySidepanel").style.width = "0";
     }
 </script>
-</body>
-</html>
 
 @endsection
