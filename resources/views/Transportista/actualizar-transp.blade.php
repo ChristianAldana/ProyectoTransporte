@@ -1,27 +1,19 @@
-
-<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
-<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-
-
-<link href="{{ asset('assets/form.css') }}" rel="stylesheet">
 @extends('layouts/layout')
 
 @section('Actualizar', 'Transportista')
 
 @section('contenido')
-<div class="container contact">
+<div class="mt-3 mb-5">
 	<div class="row">
 		<div class="col-md-3">
 			<div class="contact-info">
 				<img src="https://raw.githubusercontent.com/Suzzanne20/ResourceNekoStation/main/kisspng-computer-icons-truck-font-awesome-couriers-vector-5ae0b656310a78.1827635715246761822009.png" width="90"/>
-				<h2>Transportista</h2>
-				<h4>Actualización en proceso...</h4>
+				<h2 class="display-6">Actualizar</h2>
 			</div>
 		</div>
 		<div class="col-md-9">
 			<div class="contact-form">
-				<form action="{{route('transportista.update', $transportista -> id)}}" method="POST">
+				<form action="{{route('transportista.update', $transportista -> id_transportista)}}" method="POST">
                     @csrf
                     @method("PUT")
                     <label for="">Nombre</label>
