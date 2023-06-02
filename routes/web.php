@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
 
-    return view('Ingreso/in');
+    return view('home');
 
 });
 
@@ -28,6 +28,12 @@ Route::get('/edit-transp/{id_transportista}',[\App\Http\Controllers\Transportist
 Route::put('/update-transp/{id_transportista}',[\App\Http\Controllers\TransportistaController::class,'update'])->name('transportista.update');
 Route::get('/show-transp/{id_transportista}',[\App\Http\Controllers\TransportistaController::class,'show'])->name('transportista.show');
 Route::delete('/destroy-transp/{id_transportista}', [\App\Http\Controllers\TransportistaController::class,'destroy'])->name('transportista.destroy');
+
+
+// RUTAS CAMION
+Route::get('/camion', [\App\Http\Controllers\CamionController::class, 'index'])->name('camion.index');
+
+
 
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

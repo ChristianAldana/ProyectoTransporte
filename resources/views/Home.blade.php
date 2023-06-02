@@ -28,7 +28,6 @@
 
 
                             <a href="{{ route('login') }}";  class="btn btn-primary"; >login</a>
-                            <li><a href="#"><i class="fa fa-user" aria-hidden="true"></i></a></li>
                             <a href="{{ route('register') }}" class="btn btn-primary">registrar</a>
                             <li><a href="#"><i class="fa fa-search" aria-hidden="true"></i></a></li>
                         </ul>
