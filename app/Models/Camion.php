@@ -11,7 +11,7 @@ class Camion extends Model
     //    Parte codificada christian
 
     protected $table = 'camion';
-    protected $primaryKey = 'id_matricula';
+    protected $primaryKey = 'matricula';
     public $incrementing = false;
     public $timestamps = false;
 

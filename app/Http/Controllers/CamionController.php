@@ -1,87 +1,72 @@
 <?php
-
 namespace App\Http\Controllers;
+use App\Models\Transportista;
 
 use App\Models\Camion;
 use Illuminate\Http\Request;
+use RealRashid\SweetAlert\Facades\Alert;
 
 class CamionController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
     public function index()
     {
-        //
+        $camiones = Camion::orderBy('matricula', 'asc')->paginate(6);
+        return view('Camion/tabla-camion', compact('camiones'));
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        $camion = Camion::all(); 
+   public function create()
+   {
+       $transportistas = Transportista::all();
 
-        return view('in', ['camion' => $camion]);
-    }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
+       return view('Camion.regCamion', compact('transportistas'));
+   }
+
     public function store(Request $request)
     {
-        //
+        $camion = new Camion();
+        $camion->matricula = $request->post('matricula');
+        $camion->marca = $request->post('marca');
+        $camion->modelo = $request->post('modelo');
+        $camion->capacidad = $request->post('capacidad');
+        $camion->id_transportista = $request->post('id_transportista');
+        $camion->save();
+
+        Alert::toast('Registrado', 'success');
+        return redirect()->route('camion.index');
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\Models\Camion  $camion
-     * @return \Illuminate\Http\Response
-     */
-    public function show(Camion $camion)
+    public function show($matricula)
     {
-        //
+        $camion = Camion::find($matricula);
+        return view('Camion/eliminar-camion', compact('camion'));
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Models\Camion  $camion
-     * @return \Illuminate\Http\Response
-     */
-    public function edit(Camion $camion)
+    public function edit($matricula)
     {
-        //
+        $camion = Camion::find($matricula);
+        return view('Camion/actualizar-camion', compact('camion'));
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Camion  $camion
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, Camion $camion)
+    public function update(Request $request, $matricula)
     {
-        //
+        $camion = Camion::find($matricula);
+        $camion->matricula = $request->post('matricula');
+        $camion->modelo = $request->post('modelo');
+        $camion->capacidad = $request->post('capacidad');
+        $camion->id_transportista = $request->post('id_transportista');
+        $camion->save();
+
+        Alert::toast('Actualizado', 'info');
+        return redirect()->route('camion.index');
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  \App\Models\Camion  $camion
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy(Camion $camion)
+    public function destroy($matricula)
     {
-        //
+        $camion = Camion::find($matricula);
+        $camion->delete();
+
+        Alert::toast('Eliminado con éxito', 'error');
+        return redirect()->route('camion.index');
     }
 }
