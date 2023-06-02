@@ -8,9 +8,14 @@ use Illuminate\Database\Eloquent\Model;
 class Ingreso extends Model
 {
     protected $table = 'ingreso';
+    protected $primaryKey = 'id_ingreso';
     protected $fillable = ['origen', 'fechaIn', 'horaIn', 'id_transportista', 'matricula', 'id_piloto', 'id_carga', 'id_predio', 'id_bodega' ];
 
-
+    public function transportista()
+    {
+        return $this->belongsTo('App\Models\Transportista', 'id_transportista');
+    }
+    
     public function carga()
     {
         return $this->belongsTo('App\Models\Carga', 'id_carga');
@@ -21,10 +26,7 @@ class Ingreso extends Model
         return $this->belongsTo('App\Models\Camion', 'matricula');
     }
 
-    public function transportista()
-    {
-        return $this->belongsTo('App\Models\Transportista', 'id_transportista');
-    }
+
 
     public function piloto()
     {
@@ -45,4 +47,5 @@ class Ingreso extends Model
     {
         return $this->belongsTo('App\Models\User', 'id_usuario');
     }
+    public $timestamps = true;
 }

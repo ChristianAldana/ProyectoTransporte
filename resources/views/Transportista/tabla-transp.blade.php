@@ -7,16 +7,15 @@
 
 <link href="{{ asset('assets/form.css') }}" rel="stylesheet">
 
-@section('content')
+@section('contenido')
 <div class="container contact">
     <div class="row">
         <div class="col-md-3">
             <div class="contact-info">
                 <img src="https://raw.githubusercontent.com/Suzzanne20/ResourceNekoStation/main/kisspng-computer-icons-truck-font-awesome-couriers-vector-5ae0b656310a78.1827635715246761822009.png" width="90"/>
-                <h2>Transportista</h2>
-                <h4>Registro Transportistas</h4>
+                <h2 class="display-6">Registros transportista</h2>
                 <div class="d-flex justify-content-end">
-                    <a href="{{ route("transportista.create") }}" class="btn btn-primary btn-sm mr-2 mb-1">
+                    <a href="{{ route("transportista.create") }}" class="btn btn-dark btn-sm my-5">
                         Agregar nuevo
                     </a>
                 </div>
@@ -39,14 +38,14 @@
                             <td>{{$item->razon_social}}</td>
                             <td>{{$item->direccion}}</td>
                             <td>
-                                <form action="{{route('transportista.edit',$item->id)}}" method="GET">
+                                <form action="{{route('transportista.edit',$item->id_transportista)}}" method="GET">
                                     <button class="btn btn-outline-info btn-sm">
                                         <span class="bi bi-pencil-square"></span>
                                     </button>
                                 </form>
                             </td>
                             <td>
-                                <form action="{{route('transportista.show',$item->id)}}" method="GET">
+                                <form action="{{route('transportista.show',$item->id_transportista)}}" method="GET">
                                     <button class="btn btn-outline-info btn-sm">
                                         <span class="bi bi-trash3"></span>
                                     </button>

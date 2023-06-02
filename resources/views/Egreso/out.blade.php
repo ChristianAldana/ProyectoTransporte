@@ -9,8 +9,8 @@
 		<div class="col-md-3">
 			<div class="contact-info">
 				<img src="https://raw.githubusercontent.com/Suzzanne20/ResourceNekoStation/main/kisspng-computer-icons-truck-font-awesome-couriers-vector-5ae0b656310a78.1827635715246761822009.png" width="90"/>
-				<h2>INGRESO</h2>
-				<h4>Registro de ingresos a predio</h4>
+				<h2>EGRESO</h2>
+				<h4>Registro de egresos del predio</h4>
 			</div>
 		</div>
 	
@@ -28,9 +28,9 @@
 			@endif
 
 				<div class="form-group">
-				  <label class="control-label col-sm-2" for="origen">Origen</label>
+				  <label class="control-label col-sm-2" for="destino">Destino</label>
 				  <div class="col-sm-10">          
-					<input type="text" class="form-control" id="origen" placeholder="Ingresa la dirección de origen" name="origen">
+					<input type="text" class="form-control" id="destino" placeholder="Ingresa la dirección del destino" name="destino">
 				  </div>
 				</div>
 				<div class="form-group">

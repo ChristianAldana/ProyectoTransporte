@@ -9,9 +9,9 @@
 
 <div id="mySidepanel" class="sidepanel">
     <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
-    <a href="index.html">Inicio </a>
+    <a href="index.html">Inicio</a>
     <a href="#about">Nosotros</a>
-    <a href="#service">Servicios  </a>
+    <a href="#service">Servicios</a>
     <a href="#vehicles">Vehiculos</a>
     <a href="#testimonial">Comentario</a>
 </div>
