@@ -325,6 +325,12 @@ ul.conat_info li a:hover {
     position: absolute;
     z-index: 999;
 }
+.header2 {
+    width: 100%;
+    padding: 30px 30px;
+    position: absolute;
+    z-index: 999;
+}
 
 
 /** banner section **/

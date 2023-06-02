@@ -36,7 +36,7 @@ class IngresoController extends Controller
 
     public function store(Request $request)
     {   
-        $this->validate($request, [
+        /*$this->validate($request, [
             'origen' => 'required',
             'fechaIn' => 'required',
             'horaIn' => 'required',
@@ -46,7 +46,7 @@ class IngresoController extends Controller
             'id_carga' => 'required',
             'id_predio' => 'required',
             'id_bodega' => 'required',
-        ]);
+        ]);*/
 
         $ingreso = new Ingreso;
         $ingreso->origen = $request->post('origen');
