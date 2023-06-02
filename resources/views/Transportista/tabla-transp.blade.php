@@ -16,8 +16,8 @@
             </div>
         </div>
         <div class="col-md-9">
-            <div class="table table-responsive">
-                <table class="table">
+            <div>
+                <table class="table table-responsive">
                     <thead>
                         <th>Nombre Transportista</th>
                         <th>Razón Social</th>
