@@ -10,6 +10,8 @@ class Egreso extends Model
     protected $table = 'egreso';
     protected $primaryKey = 'id_egreso';
     public $timestamps = true;
+    protected $fillable = ['destino', 'fechaIn', 'horaIn', 'id_transportista', 'matricula', 'id_piloto', 'id_carga', 'id_predio', 'id_bodega' ];
+
 
     public function carga()
     {

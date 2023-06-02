@@ -3,7 +3,9 @@
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
+
     return view('Transportista/tabla-transp');
+
 });
 
 //RUTAS DE LOGIN
@@ -14,18 +16,6 @@ Route::get('views/auth/login', function () {
 Route::get('views/auth/register', function () {
     return view('auth/register');
 })->name('register');
-
-//Route::get('/', function () {
-
-// return view('Transportista/regTransporte');
-//});
-
-  //  return view('Transportista/regTransporte');
-//});
-
-
-//    return view('Transportista/regTransporte');
-//});
 
 
 Route::get('/show/{id}',[IngresoController::class,'showIn'])->name('ingreso.show');
@@ -40,20 +30,18 @@ Route::get('/show-transp/{id_transportista}',[\App\Http\Controllers\Transportist
 Route::delete('/destroy-transp/{id_transportista}', [\App\Http\Controllers\TransportistaController::class,'destroy'])->name('transportista.destroy');
 
 
-
-//RUTAS DE INGRESO
-Route::get('/show/{id}',[IngresoController::class,'create'])->name('transportistas.create');
-Route::get('/show/{id}',[IngresoController::class,'create'])->name('camiones.create');
-Route::get('/show/{id}',[IngresoController::class,'create'])->name('pilotos.create');
-Route::get('/show/{id}',[IngresoController::class,'create'])->name('cargas.create');
-Route::get('/show/{id}',[IngresoController::class,'create'])->name('predios.create');
-Route::get('/show/{id}',[IngresoController::class,'create'])->name('bodegas.create');
-
-
-Route::get('/show/{id}',[IngresoController::class,'showIn'])->name('ingreso.show');
-//Route::get('/show/{id}',[IngresoController::class,'showIn'])->name('ingreso.show');
-
-//Auth::routes();
-//Auth::routes();
-
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+
+//RUTAS INGRESO
+Route::get('/ingreso',[\App\Http\Controllers\IngresoController::class,'index'])->name('ingreso.index');
+Route::get('/in',[\App\Http\Controllers\IngresoController::class,'create'])->name('ingreso.create');
+Route::post('/store-in',[\App\Http\Controllers\IngresoController::class,'store'])->name('ingreso.store');
+Route::get('/show-in/{id_ingreso}',[\App\Http\Controllers\IngresoController::class,'show'])->name('ingreso.show');
+
+
+//RUTAS EGRESO
+Route::get('/egreso',[\App\Http\Controllers\EgresoController::class,'index'])->name('egreso.index');
+Route::get('/out',[\App\Http\Controllers\EgresoController::class,'create'])->name('egreso.create');
+Route::post('/store-out',[\App\Http\Controllers\EgresoController::class,'store'])->name('egreso.store');
+Route::get('/show-out/{id_egreso}',[\App\Http\Controllers\EgresoController::class,'show'])->name('egreso.show');
