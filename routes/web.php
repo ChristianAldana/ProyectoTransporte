@@ -32,6 +32,13 @@ Route::delete('/destroy-transp/{id_transportista}', [\App\Http\Controllers\Trans
 
 // RUTAS CAMION
 Route::get('/camion', [\App\Http\Controllers\CamionController::class, 'index'])->name('camion.index');
+Route::get('/create-camion', [\App\Http\Controllers\CamionController::class, 'create'])->name('camion.create');
+Route::post('/store-camion', [\App\Http\Controllers\CamionController::class, 'store'])->name('camion.store');
+Route::get('/edit-camion/{matricula}', [\App\Http\Controllers\CamionController::class, 'edit'])->name('camion.edit');
+Route::put('/update-camion/{matricula}', [\App\Http\Controllers\CamionController::class, 'update'])->name('camion.update');
+Route::get('/show-camion/{matricula}', [\App\Http\Controllers\CamionController::class, 'show'])->name('camion.show');
+Route::delete('/destroy-camion/{matricula}', [\App\Http\Controllers\CamionController::class, 'destroy'])->name('camion.destroy');
+
 
 
 
