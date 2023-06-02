@@ -9,7 +9,7 @@
 
 @section('Actualizar', 'Transportista')
 
-@section('content')
+@section('contenido')
 <div class="container contact">
 	<div class="row">
 		<div class="col-md-3">

@@ -1,7 +1,4 @@
-@extends('layout/layoutS')
-@section('tituloPagina', 'ingresos')
-@section('navbar')
-@section('contenido') 
+
 
 
 <div class="container contact">
