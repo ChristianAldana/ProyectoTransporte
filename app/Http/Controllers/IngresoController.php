@@ -19,7 +19,8 @@ class IngresoController extends Controller
     public function index()
     {
     
-        return view('Ingreso.in');
+        $datos = Ingreso::orderBy('id_ingreso', 'asc')->paginate(6);
+        return view('Ingreso/inTabla', compact('datos'));
     }
     
     public function create()
@@ -32,7 +33,7 @@ class IngresoController extends Controller
         $bodegas = Bodega::all();
         $users = Users::all();
 
-        return view('Ingreso.in', compact('transportistas', 'matriculas', 'pilotos', 'cargas', 'predios', 'bodegas', 'users'));
+        return view('Ingreso/in', compact('transportistas', 'matriculas', 'pilotos', 'cargas', 'predios', 'bodegas', 'users'));
     }
 
 

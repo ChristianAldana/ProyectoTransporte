@@ -18,7 +18,8 @@ class EgresoController extends Controller
     public function index()
     {
     
-        return view('Egreso.out');
+        $datos = Egreso::orderBy('id_egreso', 'asc')->paginate(6);
+        return view('Egreso/outTabla', compact('datos'));
     }
     
     public function create()
@@ -31,7 +32,7 @@ class EgresoController extends Controller
         $bodegas = Bodega::all();
         $users = Users::all();
 
-        return view('Egreso.out', compact('transportistas', 'matriculas', 'pilotos', 'cargas', 'predios', 'bodegas', 'users'));
+        return view('Egreso/out', compact('transportistas', 'matriculas', 'pilotos', 'cargas', 'predios', 'bodegas', 'users'));
     }
 
     public function store(Request $request)

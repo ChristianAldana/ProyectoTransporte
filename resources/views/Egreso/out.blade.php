@@ -20,7 +20,7 @@
 		<div class="col-md-9">
 			<div class="contact-form">
 
-			<form action="{{route('ingreso.store')}}"  method="POST">
+			<form action="{{route('egreso.store')}}"  method="POST">
 			{{ csrf_field( ) }}
 			@if (count($errors)>0) 
 				<div class="alert alert-danger"><ul>				
