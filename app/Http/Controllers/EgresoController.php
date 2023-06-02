@@ -3,81 +3,84 @@
 namespace App\Http\Controllers;
 
 use App\Models\Egreso;
+use App\Models\Transportista;
+use App\Models\Camion;
+use App\Models\Piloto;
+use App\Models\Carga;
+use App\Models\Predio;
+use App\Models\Bodega;
+use App\Models\Users;
 use Illuminate\Http\Request;
 
 class EgresoController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
     public function index()
     {
-        //
+    
+        return view('Egreso.out');
     }
-
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+    
     public function create()
     {
-        //
+        $transportistas = Transportista::all();
+        $matriculas = Camion::all();
+        $pilotos = Piloto::all();
+        $cargas = Carga::all();
+        $predios = Predio::all(); 
+        $bodegas = Bodega::all();
+
+        return view('Egreso.out', compact('transportistas', 'matriculas', 'pilotos', 'cargas', 'predios', 'bodegas'));
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
+
     public function store(Request $request)
-    {
-        //
+    {   
+        $this->validate($request, [
+            'origen' => 'required',
+            'fechaIn' => 'required',
+            'horaIn' => 'required',
+            'id_transportista' => 'required',
+            'matricula' => 'required',
+            'id_piloto' => 'required',
+            'id_carga' => 'required',
+            'id_predio' => 'required',
+            'id_bodega' => 'required',
+        ]);
+
+        $egreso = new Egreso;
+        $egreso->destino = $request->post('destino');
+        $egreso->fechaIn = $request->post('fechaIn');
+        $egreso->horaIn = $request->post('horaIn');
+        $egreso->id_transportista = $request->post('id_transportista');
+        $egreso->matricula = $request->post('matricula');
+        $egreso->id_piloto = $request->post('id_piloto');
+        $egreso->id_carga = $request->post('id_carga');
+        $egreso->id_predio = $request->post('id_predio');
+        $egreso->id_bodega = $request->post('id_bodega');
+        $egreso->save();
+
+        Alert::toast('Registrado', 'success');
+        return redirect()->route('egreso.index');
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\Models\Egreso  $egreso
-     * @return \Illuminate\Http\Response
-     */
+
     public function show(Egreso $egreso)
     {
-        //
+        $egreso = Egreso::find($egreso->id_egreso);
+        return view('Egreso.out', compact('egreso'));
     }
+      
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Models\Egreso  $egreso
-     * @return \Illuminate\Http\Response
-     */
     public function edit(Egreso $egreso)
     {
         //
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Egreso  $egreso
-     * @return \Illuminate\Http\Response
-     */
     public function update(Request $request, Egreso $egreso)
     {
         //
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  \App\Models\Egreso  $egreso
-     * @return \Illuminate\Http\Response
-     */
     public function destroy(Egreso $egreso)
     {
         //
