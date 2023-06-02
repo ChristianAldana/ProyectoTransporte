@@ -6,8 +6,8 @@
 
 	@extends('layouts/layout')
 	@section('contenido')
-	<link href="{{ asset('assets/form.css') }}" rel="stylesheet"> 
-<div class=" ">
+	<link href="{{ asset('assets/form.css') }}" rel="stylesheet">
+<div class="mt-3 mb-5">
 	<div class="row">
     <div class="row">
         <div class="col-md-3">
@@ -28,7 +28,7 @@
                         <th>Origen</th>
                         <th>Fecha</th>
                         <th>Hora</th>
-                        <th>Transportista</th>
+                        <th>Transporte</th>
                         <th>Matricula</th>
                         <th>Piloto</th>
                         <th>Carga</th>
