@@ -45,7 +45,7 @@
 				<div class="form-group">
 				  <label class="control-label col-sm-2" for="id_transportista">Transportista</label>
 				  <div class="col-sm-10">          
-					<input type="text" class="form-control" id="id_transportista" placeholder="Ingresa el nombre de la Transportista" name="id_transportista">
+					<input type="number" class="form-control" id="id_transportista" placeholder="Ingresa id de la Transportista" name="id_transportista">
 				  </div>
 				</div>
 				
@@ -67,7 +67,6 @@
 						<option value="2">Bien intermedio</option>
 						<option value="3">Perecederos</option>
 						<option value="4">No perecederos</option>
-						<option value="5">Peligrosa</option>
 						<option value="5">Fragil</option>
 					</select>
 				</div>
