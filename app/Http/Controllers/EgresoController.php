@@ -11,13 +11,15 @@ use App\Models\Predio;
 use App\Models\Bodega;
 use App\Models\Users;
 use Illuminate\Http\Request;
+use RealRashid\SweetAlert\Facades\Alert;
 
 class EgresoController extends Controller
 {
     public function index()
     {
     
-        return view('Egreso.out');
+        $datos = Egreso::orderBy('id_egreso', 'asc')->paginate(6);
+        return view('Egreso/outTabla', compact('datos'));
     }
     
     public function create()
@@ -28,35 +30,25 @@ class EgresoController extends Controller
         $cargas = Carga::all();
         $predios = Predio::all(); 
         $bodegas = Bodega::all();
+        $users = Users::all();
 
-        return view('Egreso.out', compact('transportistas', 'matriculas', 'pilotos', 'cargas', 'predios', 'bodegas'));
+        return view('Egreso/out', compact('transportistas', 'matriculas', 'pilotos', 'cargas', 'predios', 'bodegas', 'users'));
     }
-
 
     public function store(Request $request)
     {   
-        $this->validate($request, [
-            'origen' => 'required',
-            'fechaIn' => 'required',
-            'horaIn' => 'required',
-            'id_transportista' => 'required',
-            'matricula' => 'required',
-            'id_piloto' => 'required',
-            'id_carga' => 'required',
-            'id_predio' => 'required',
-            'id_bodega' => 'required',
-        ]);
 
         $egreso = new Egreso;
         $egreso->destino = $request->post('destino');
-        $egreso->fechaIn = $request->post('fechaIn');
-        $egreso->horaIn = $request->post('horaIn');
+        $egreso->fecha = $request->post('fecha');
+        $egreso->hora = $request->post('hora');
         $egreso->id_transportista = $request->post('id_transportista');
         $egreso->matricula = $request->post('matricula');
         $egreso->id_piloto = $request->post('id_piloto');
         $egreso->id_carga = $request->post('id_carga');
         $egreso->id_predio = $request->post('id_predio');
         $egreso->id_bodega = $request->post('id_bodega');
+        $egreso->id_usuario = $request->post('id_usuario');
         $egreso->save();
 
         Alert::toast('Registrado', 'success');
