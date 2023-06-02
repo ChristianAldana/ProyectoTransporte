@@ -17,22 +17,14 @@ class EgresoController extends Controller
 {
     public function index()
     {
-    
-        $datos = Egreso::orderBy('id_egreso', 'asc')->paginate(6);
+
+        $datos = Egreso::orderBy('id_egreso', 'asc')->paginate(8);
         return view('Egreso/outTabla', compact('datos'));
     }
     
     public function create()
     {
-        $transportistas = Transportista::all();
-        $matriculas = Camion::all();
-        $pilotos = Piloto::all();
-        $cargas = Carga::all();
-        $predios = Predio::all(); 
-        $bodegas = Bodega::all();
-        $users = Users::all();
-
-        return view('Egreso/out', compact('transportistas', 'matriculas', 'pilotos', 'cargas', 'predios', 'bodegas', 'users'));
+        return view('Egreso/out');
     }
 
     public function store(Request $request)

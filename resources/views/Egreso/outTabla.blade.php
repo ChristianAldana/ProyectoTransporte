@@ -14,7 +14,7 @@
                 <img src="https://raw.githubusercontent.com/Suzzanne20/ResourceNekoStation/main/kisspng-computer-icons-truck-font-awesome-couriers-vector-5ae0b656310a78.1827635715246761822009.png" width="90"/>
                 <h2 class="display-6">Registros de Egresos</h2>
                 <div class="d-flex justify-content-end">
-                    <a href="{{ route("egreso.create") }}" class="btn btn-dark btn-sm my-5">
+                    <a href="{{ route("egreso.index") }}" class="btn btn-dark btn-sm my-5">
                         Agregar nuevo
                     </a>
                 </div>
@@ -40,12 +40,12 @@
                             <td>{{$item->destino}}</td>
                             <td>{{$item->fecha}}</td>
                             <td>{{$item->hora}}</td>
-                            <td>{{$item->id_transportista}}</td>
+                            <td>{{$item->transportista->nombre}}</td>
                             <td>{{$item->matricula}}</td>
                             <td>{{$item->id_piloto}}</td>
-                            <td>{{$item->id_carga}}</td>
-                            <td>{{$item->id_predio}}</td>
-                            <td>{{$item->id_bodega}}</td>
+                            <td>{{$item->carga->carga}}</td>
+                            <td>{{$item->predio->ubicacion}}</td>
+                            <td>{{$item->bodega->bodega}}</td>
                         </tr>
                     @endforeach
                     </tbody>

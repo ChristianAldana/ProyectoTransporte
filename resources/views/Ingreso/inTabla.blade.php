@@ -41,12 +41,12 @@
                             <td>{{$item->origen}}</td>
                             <td>{{$item->fechaIn}}</td>
                             <td>{{$item->horaIn}}</td>
-                            <td>{{$item->id_transportista}}</td>
+                            <td>{{$item->transportista->nombre}}</td>
                             <td>{{$item->matricula}}</td>
-                            <td>{{$item->id_piloto}}</td>
-                            <td>{{$item->id_carga}}</td>
-                            <td>{{$item->id_predio}}</td>
-                            <td>{{$item->id_bodega}}</td>
+                            <td>{{$item->piloto->nombre}}</td>
+                            <td>{{$item->carga->carga}}</td>
+                            <td>{{$item->predio->ubicacion}}</td>
+                            <td>{{$item->bodega->bodega}}</td>
                         </tr>
                     @endforeach
                     </tbody>
