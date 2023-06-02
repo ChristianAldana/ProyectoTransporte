@@ -17,11 +17,11 @@ class IngresoController extends Controller
 {
     public function index()
     {
-    
+
         $datos = Ingreso::orderBy('id_ingreso', 'asc')->paginate(8);
         return view('Ingreso/inTabla', compact('datos'));
     }
-    
+
     public function create()
     {
         return view('Ingreso/in');
@@ -29,7 +29,7 @@ class IngresoController extends Controller
 
 
     public function store(Request $request)
-    {   
+    {
 
         $ingreso = new Ingreso;
         $ingreso->origen = $request->post('origen');
@@ -54,7 +54,7 @@ class IngresoController extends Controller
         $ingreso = Ingreso::find($ingreso->id_ingreso);
         return view('Ingreso.in', compact('ingreso'));
     }
-      
+
 
     public function edit(Ingreso $ingreso)
     {
@@ -69,5 +69,9 @@ class IngresoController extends Controller
     public function destroy(Ingreso $ingreso)
     {
         //
+    }
+    public function fecha(){
+        $datos = Ingreso::orderBy('id_ingreso', 'asc')->paginate(8);
+        return view('Ingreso/search1', compact('datos'));
     }
 }

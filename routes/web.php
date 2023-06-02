@@ -49,6 +49,7 @@ Route::get('/ingreso',[\App\Http\Controllers\IngresoController::class,'index'])-
 Route::get('/in',[\App\Http\Controllers\IngresoController::class,'create'])->name('ingreso.create');
 Route::post('/store-in',[\App\Http\Controllers\IngresoController::class,'store'])->name('ingreso.store');
 Route::get('/show-in/{id_ingreso}',[\App\Http\Controllers\IngresoController::class,'show'])->name('ingreso.show');
+Route::get('/fecha',[\App\Http\Controllers\IngresoController::class,'fecha'])->name('ingreso.fecha');
 
 
 //RUTAS EGRESO
