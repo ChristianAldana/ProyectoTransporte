@@ -1,4 +1,4 @@
-@extends('layouts/layout')
+
 @section('Registrar', 'Transportista')
 
 @section('contenido')
