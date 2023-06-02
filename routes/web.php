@@ -3,7 +3,7 @@
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
-    return view('Ingreso/in');
+    return view('Transportista/tabla-transp');
 });
 
 //RUTAS DE LOGIN
