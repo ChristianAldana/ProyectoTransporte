@@ -19,7 +19,7 @@
                                         <h4 class="mt-1 mb-5 pb-1">Registrarse</h4>
                                     </div>
 
-                                    <form method="POST" action="{{ route('register') }}">
+                                    <form action="{{ route('register') }}" method="POST" >
                                         @csrf
 
                                         <div class="row mb-3">
@@ -75,7 +75,7 @@
 
                                         <div class="d-flex align-items-center justify-content-center pb-4">
                                             <p class="mb-0 me-2"></p>
-                                            <button type="submit" class="btn btn-outline-danger">  {{ __('Register') }}
+                                            <button type="submit" name="register" class="btn btn-outline-danger">  {{ __('Register') }}
                                             </button>
                                         </div>
 

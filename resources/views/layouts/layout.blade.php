@@ -42,14 +42,14 @@
 </head>
 <body>
 @section('sidebar')
-    <div id="mySidepanel" class="sidepanel">
-        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
-        <a href="index.html">Inicio</a>
-        <a href="#about">Nosotros</a>
-        <a href="#service">Servicios</a>
-        <a href="#vehicles">Vehiculos</a>
-        <a href="#testimonial">Comentario</a>
-    </div>
+
+<div id="mySidepanel" class="sidepanel">
+    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
+    <a href="{{ route('transportista.index') }}">Transportistas</a>
+    <a href="#">Camiones</a>
+    <a href="{{ route('ingreso.index') }}">Ingreso</a>
+    <a href="{{ route('egreso.index') }}">Egreso</a>
+</div>
     <!-- header -->
     <header>
         <div class="header2">
