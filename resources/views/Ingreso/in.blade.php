@@ -7,7 +7,7 @@
 	@extends('layouts/layout')
 	@section('contenido')
 	<link href="{{ asset('assets/form.css') }}" rel="stylesheet"> 
-<div class=" ">
+<div class=" mt-3 mb-5 ">
 	<div class="row">
 		<div class="col-md-3">
 			<div class="contact-info">
