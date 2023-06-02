@@ -1,14 +1,11 @@
 <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
-<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-@extends('layouts/layout')
-@section('Tabla', 'Transportista')
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <link href="{{ asset('assets/form.css') }}" rel="stylesheet"> 
 
 
-<link href="{{ asset('assets/form.css') }}" rel="stylesheet">
+<div class="container contact">
 
-@section('contenido')
-<div class=" ">
     <div class="row">
         <div class="col-md-3">
             <div class="contact-info">
@@ -39,8 +36,8 @@
                     @foreach($datos as $item)
                         <tr>
                             <td>{{$item->destino}}</td>
-                            <td>{{$item->fechaIn}}</td>
-                            <td>{{$item->horaIn}}</td>
+                            <td>{{$item->fecha}}</td>
+                            <td>{{$item->hora}}</td>
                             <td>{{$item->id_transportista}}</td>
                             <td>{{$item->matricula}}</td>
                             <td>{{$item->id_piloto}}</td>
