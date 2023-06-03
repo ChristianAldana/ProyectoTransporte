@@ -12,15 +12,15 @@
 		<div class="col-md-9">
 			<div class="contact-form">
 
-			<form action="{{route('ingreso.store')}}"  method="POST">
-			{{ csrf_field( ) }}
-			@if (count($errors)>0)
-				<div class="alert alert-danger"><ul>
-					@foreach ($errors->all() as $error)
-						<li>{{ $error }}</li>
-					@endforeach
-				</ul></div>
-			@endif
+				<form action="{{route('ingreso.store')}}"  method="POST">
+				{{ csrf_field( ) }}
+				@if (count($errors)>0)
+					<div class="alert alert-danger"><ul>
+						@foreach ($errors->all() as $error)
+							<li>{{ $error }}</li>
+						@endforeach
+					</ul></div>
+				@endif
 
 				<div class="form-group">
 				  <label class="control-label col-sm-2" for="origen">Origen</label>
@@ -28,6 +28,7 @@
 					<input type="text" class="form-control" id="origen" placeholder="Ingresa la dirección de origen" name="origen">
 				  </div>
 				</div>
+
 				<div class="form-group">
 				  <label class="control-label col-sm-4" for="fechaIn">Fecha</label>
 				  <label class="control-label col-sm-4" for="horaIn">Hora</label>
@@ -67,11 +68,6 @@
 				</div>
 
 
-				<br><div class="input-group col-mb-10">
-					<label class="control-label col-sm-5" for="id_predio">Predio</label>
-					<label class="control-label col-sm-5" for="id_bodega">Bodega</label>
-
-
 				<div class="input-group col-mb-10">
 					<label class="control-label col-sm-3 mr-2" for="id_predio">Predio</label>
 					<select class="form-select col-sm-6 ml-4" id="id_predio" name="id_predio">
@@ -104,7 +100,7 @@
                   <button type="submit" class="btn btn-default">Submit</button>
 				  </div>
 				</div>
-            </form>
+            	</form>
 			</div>
 		</div>
 	</div>
