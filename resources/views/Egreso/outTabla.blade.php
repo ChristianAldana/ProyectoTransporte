@@ -1,18 +1,10 @@
-
-<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
-<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 @extends('layouts/layout')
 @section('Tabla', 'Transportista')
-
-
-<link href="{{ asset('assets/form.css') }}" rel="stylesheet">
 
 @section('contenido')
 <div class=" ">
 	<link href="{{ asset('assets/form.css') }}" rel="stylesheet">
 <div class="mt-3 mb-5">
-
     <div class="row">
         <div class="col-md-3">
             <div class="contact-info">
@@ -25,7 +17,6 @@
                     </a>
 
                     <a href="{{ route("egreso.create") }}" class="btn btn-dark btn-sm my-5">
-
                         Agregar nuevo
                     </a>
                 </div>
@@ -49,16 +40,6 @@
                     @foreach($datos as $item)
                         <tr>
                             <td>{{$item->destino}}</td>
-
-                            <td>{{$item->fechaIn}}</td>
-                            <td>{{$item->horaIn}}</td>
-                            <td>{{$item->id_transportista}}</td>
-                            <td>{{$item->matricula}}</td>
-                            <td>{{$item->id_piloto}}</td>
-                            <td>{{$item->id_carga}}</td>
-                            <td>{{$item->id_predio}}</td>
-                            <td>{{$item->id_bodega}}</td>
-
                             <td>{{$item->fecha}}</td>
                             <td>{{$item->hora}}</td>
                             <td>{{$item->transportista->nombre}}</td>
