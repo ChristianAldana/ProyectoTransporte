@@ -10,8 +10,7 @@
 		<div class="col-md-3">
 			<div class="contact-info">
 				<img src="https://raw.githubusercontent.com/Suzzanne20/ResourceNekoStation/main/kisspng-computer-icons-truck-font-awesome-couriers-vector-5ae0b656310a78.1827635715246761822009.png" width="90"/>
-				<h2>Camión</h2>
-				<h4>Registro de nuevos Camiones</h4>
+				<h2 class="display-6"> Registro de Camión</h2>
 			</div>
 		</div>
 		<div class="col-md-9">
