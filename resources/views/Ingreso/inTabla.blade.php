@@ -3,7 +3,6 @@
 
 @section('contenido')
 <div class="mt-3 mb-5">
-
     <div class="row">
         <div class="col-md-3">
             <div class="contact-info">
