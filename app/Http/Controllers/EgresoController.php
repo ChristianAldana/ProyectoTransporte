@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Egreso;
+use App\Models\Ingreso;
 use App\Models\Transportista;
 use App\Models\Camion;
 use App\Models\Piloto;
@@ -72,5 +73,18 @@ class EgresoController extends Controller
     public function fecha(){
         $datos = Egreso::orderBy('id_egreso', 'asc')->paginate(8);
         return view('Egreso/search2', compact('datos'));
+    }
+    public function filtroNombre(Request $request)
+    {
+        $filtroNombre = $request->input('filtro_nombre');
+
+        // Obtener los registros de ingresos filtrados por nombre
+        $datos = Egreso::query()
+            ->whereHas('transportista', function ($query) use ($filtroNombre) {
+                $query->where('nombre', 'like', "%$filtroNombre%");
+            })
+            ->paginate(10);
+
+        return view('Egreso/outTabla', compact('datos', 'filtroNombre'));
     }
 }
