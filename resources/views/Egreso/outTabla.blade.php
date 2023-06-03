@@ -15,7 +15,15 @@
             </div>
         </div>
         <div class="col-md-9">
+
             <div class="table table-responsive">
+                <form method="GET" action="{{ route('egreso.filtro') }}">
+                    <div class="form-group">
+                        <label for="filtro_nombre">Filtrar por transportista:</label>
+                        <input type="text" name="filtro_nombre" id="filtro_nombre" class="form-control" value="{{ $filtroNombre ?? '' }}">
+                    </div>
+                    <button type="submit" class="btn btn-info btn-sm mb-4">Buscar</button>
+                </form>
                 <table class="table">
                     <thead>
                         <th>Destino</th>
