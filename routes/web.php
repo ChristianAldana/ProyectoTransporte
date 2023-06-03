@@ -79,12 +79,8 @@ Route::post('/store-out',[\App\Http\Controllers\EgresoController::class,'store']
 Route::get('/show-out/{id_egreso}',[\App\Http\Controllers\EgresoController::class,'show'])->name('egreso.show');
 Route::get('/fecha-out',[\App\Http\Controllers\IngresoController::class,'fecha'])->name('egreso.fecha');
 
-<<<<<<< HEAD
 Route::get('/filtro', [\App\Http\Controllers\IngresoController::class, 'filtroNombre'])->name('ingreso.filtro');
 Route::get('/filtroe', [\App\Http\Controllers\EgresoController::class, 'filtroNombre'])->name('egreso.filtro');
-=======
-Route::get('/filtro', [IngresoController::class, 'filtroNombre'])->name('ingreso.filtro');
 
 
 Route::get('/fecha-out',[\App\Http\Controllers\EgresoController::class,'fecha'])->name('egreso.fecha');
->>>>>>> 47066e67ddab834daa9b1666d83637e89487bd14
