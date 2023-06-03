@@ -1,9 +1,3 @@
-
-<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
-    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-
-
 	@extends('layouts/layout')
 	@section('contenido')
 	<link href="{{ asset('assets/form.css') }}" rel="stylesheet">
@@ -21,26 +15,6 @@
             </div>
         </div>
         <div class="col-md-9">
-            <form class="form-inline" action="" method="GET">
-                <div class="form-row align-items-center">
-                    <div class="col-md-4">
-                        <div class="form-group">
-                            <label><b>Del Dia</b></label>
-                            <input type="date" name="from_date" value="<?php if(isset($_GET['from_date'])){ echo $_GET['from_date']; } ?>" class="form-control">
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="form-group">
-                            <label><b> Hasta  el Dia</b></label>
-                            <input type="date" name="to_date" value="<?php if(isset($_GET['to_date'])){ echo $_GET['to_date']; } ?>" class="form-control">
-                        </div>
-                    </div>
-                    <div class="col-auto">
-                        <button type="submit" class="btn btn-info btn-sm mt-4 mx-2">Buscar</button>
-                    </div>
-                </div>
-                <br>
-            </form>
             <div class="table table-responsive">
                 <table class="table">
                     <thead>
