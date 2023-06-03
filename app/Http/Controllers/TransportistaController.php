@@ -1,10 +1,12 @@
 <?php
 
 namespace App\Http\Controllers;
-
 use App\Models\Transportista;
+use App\Models\Ingreso;
+use App\Models\Egreso;
 use Illuminate\Http\Request;
 use RealRashid\SweetAlert\Facades\Alert;
+
 
 class TransportistaController extends Controller
 {
