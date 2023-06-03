@@ -7,11 +7,8 @@
 
 
 <link href="{{ asset('assets/form.css') }}" rel="stylesheet">
-
-@section('contenido')
 <div class=" ">
 
-	@extends('layouts/layout')
 	@section('contenido')
 <div class="mt-3 mb-5">
 
@@ -22,8 +19,9 @@
                 <h2 class="display-6">Registros de Ingresos</h2>
                 <div class="d-flex justify-content-end">
 
-                    <a href="{{ route("ingreso.index") }}" class="btn btn-dark btn-sm my-5">
-
+                    <a style="margin-right: 10px;" href="{{ route("Home") }}" class="btn btn-dark btn-sm my-5">
+                        Volver
+                    </a>
                     <a href="{{ route("ingreso.create") }}" class="btn btn-dark btn-sm my-5">
 
                         Agregar nuevo
