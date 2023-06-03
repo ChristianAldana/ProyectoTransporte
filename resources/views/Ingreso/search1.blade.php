@@ -5,7 +5,7 @@
             <div class="col-md-3">
                 <div class="contact-info">
                     <img src="https://raw.githubusercontent.com/Suzzanne20/ResourceNekoStation/main/kisspng-computer-icons-truck-font-awesome-couriers-vector-5ae0b656310a78.1827635715246761822009.png" width="90"/>
-                    <h2 class="display-6">Registros de Ingresos</h2>
+                    <h2 class="display-6">Busqueda por fecha de ingreso</h2>
                     <div class="d-flex justify-content-end">
                         <a style="margin-right: 10px;" href="{{ route("Home") }}" class="btn btn-dark btn-sm my-5">
                             Volver
