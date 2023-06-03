@@ -29,9 +29,6 @@
                         <ul class="conat_info d_none ">
 
 
-
-                            <a href="{{ route('login') }}";  class="btn btn-primary"; >login</a>
-
                             <!--<a href="{{ route('login') }}";  class="btn btn-primary"; >login</a>
                             <li><a href="#"><i class="fa fa-user" aria-hidden="true"></i></a></li>
 
