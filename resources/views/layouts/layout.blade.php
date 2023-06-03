@@ -42,6 +42,7 @@
 </head>
 <body>
 @section('sidebar')
+
     <div id="mySidepanel" class="sidepanel">
         <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
         <a href="{{ route('transportista.index') }}">Transportistas</a>
@@ -51,6 +52,7 @@
         <a href="{{ route('ingreso.fecha') }}">Busqueda Ingreso</a>
         <a href="{{ route('egreso.fecha') }}">Busqueda Egreso</a>
     </div>
+
     <!-- header -->
     <header>
         <div class="header2">
