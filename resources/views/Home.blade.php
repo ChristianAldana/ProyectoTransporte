@@ -10,9 +10,17 @@
 <div id="mySidepanel" class="sidepanel">
     <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
     <a href="{{ route('transportista.index') }}">Transportistas</a>
+
     <a href="#">Camiones</a>
     <a href="{{ route('ingreso.index') }}">Ingreso</a>
     <a href="{{ route('egreso.index') }}">Egreso</a>
+
+    <a href="{{ route('camion.index') }}">Camiones</a>
+    <a href="{{ route('ingreso.index') }}">Ingreso</a>
+    <a href="{{ route('egreso.index') }}">Egreso</a>
+    <a href="{{ route('ingreso.fecha') }}">Busqueda Ingreso</a>
+    <a href="{{ route('egreso.fecha') }}">Busqueda Egreso</a>
+
 </div>
 <!-- header -->
 <header>
@@ -26,10 +34,14 @@
                         <ul class="conat_info d_none ">
 
 
+
                             <a href="{{ route('login') }}";  class="btn btn-primary"; >login</a>
+
+                            <!--<a href="{{ route('login') }}";  class="btn btn-primary"; >login</a>
                             <li><a href="#"><i class="fa fa-user" aria-hidden="true"></i></a></li>
+
                             <a href="{{ route('register') }}" class="btn btn-primary">registrar</a>
-                            <li><a href="#"><i class="fa fa-search" aria-hidden="true"></i></a></li>
+                            <li><a href="#"><i class="fa fa-search" aria-hidden="true"></i></a></li>-->
                         </ul>
                         <button class="openbtn" onclick="openNav()"><img src={{asset('assets/menu_icon.png')}} alt="#" /> </button>
                     </div>
@@ -139,7 +151,7 @@
                 </div>
             </div>
             <div class="col-md-12">
-                <a class="read_more" href="#">Volver</a>
+            <a class="read_more" href="#">Volver</a>
             </div>
         </div>
     </div>

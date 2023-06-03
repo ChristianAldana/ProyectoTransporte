@@ -8,7 +8,7 @@
 <link href="{{ asset('assets/form.css') }}" rel="stylesheet">
 
 @section('contenido')
-<div class=" ">
+<div class="mt-3 mb-5">
     <div class="row">
         <div class="col-md-3">
             <div class="contact-info">
@@ -26,8 +26,8 @@
             </div>
         </div>
         <div class="col-md-9">
-            <div class="table table-responsive">
-                <table class="table">
+            <div>
+                <table class="table table-responsive">
                     <thead>
                         <th>Nombre Transportista</th>
                         <th>Razón Social</th>

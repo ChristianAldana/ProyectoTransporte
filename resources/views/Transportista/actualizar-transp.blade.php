@@ -22,11 +22,11 @@
                     <input type="text" name="razon_social" class="form-control" required value="{{$transportista -> razon_social}}">
                     <label for="">Dirección</label>
                     <input type="text" name="direccion" class="form-control" required value="{{$transportista -> direccion}}">
-                    <a href="{{route("transportista.index")}}" class="btn btn-secondary btn-sm">
-                        <span class="bi bi-arrow-return-left"></span>  Regresar
+                    <a href="{{route("transportista.index")}}" class="btn btn-outline-dark btn-sm my-3">
+                        Regresar
                     </a>
-                    <button class="btn btn-warning btn-sm">
-                        <span class="bi bi-pencil-square"></span>  Actualizar
+                    <button class="btn btn-outline-info btn-sm my-3">
+                        Actualizar
                     </button>
                 </form>
 			</div>
