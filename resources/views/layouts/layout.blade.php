@@ -62,12 +62,7 @@
                     </div>
                     <div class="col-md-8 col-sm-8">
                         <div class="right_bottun">
-                            <ul class="conat_info d-inline-flex my-3">
-                                <a href="{{ route('login') }}";  class="btn btn-secondary btn-sm"; >login</a>
-                                <li><a href="#"><i class="fa fa-user" aria-hidden="true"></i></a></li>
-                                <a href="{{ route('register') }}" class="btn btn-secondary btn-sm">registrar</a>
-                                <li><a href="#"><i class="fa fa-search" aria-hidden="true"></i></a></li>
-                            </ul>
+
                             <button class="openbtn" onclick="openNav()"><img src={{asset('assets/menu_icon.png')}} alt="#" /> </button>
                         </div>
                     </div>
