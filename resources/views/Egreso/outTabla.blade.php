@@ -1,11 +1,5 @@
 @extends('layouts/layout')
-@section('Tabla', 'Transportista')
-
 @section('contenido')
-<div class=" ">
-
-	@extends('layouts/layout')
-	@section('contenido')
 	<link href="{{ asset('assets/form.css') }}" rel="stylesheet">
 <div class="mt-3 mb-5">
     <div class="row">
