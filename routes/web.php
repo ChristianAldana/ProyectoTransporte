@@ -1,20 +1,40 @@
 <?php
-
 use Illuminate\Support\Facades\Route;
 
+
+
+
 Route::get('/', function () {
+
     return view('Home');
+
 });
+
+Route::get('views/vendor/Home', function () {
+    return view('Home');
+})->name('Home');
+
+//Route::get('/', function () {
+
+  //  return view('Ingreso/in');
+
+//});
 
 //RUTAS DE LOGIN
 Route::get('views/auth/login', function () {
-    return view('auth/login');
+   return view('auth/login');
 })->name('login');
 
 Route::get('views/auth/register', function () {
     return view('auth/register');
 })->name('register');
 
+//Route::post('/register', 'register');
+Route::post('/register',[RegisterController::class, 'index']);
+
+Route::post('/login',[LoginController::class, '$redirectTo']);
+
+//Route::get('/register',[\App\Http\Controllers\Auth\RegisterController::class,'validator'])->name('register.create');
 
 Route::get('/show/{id}',[IngresoController::class,'showIn'])->name('ingreso.show');
 
@@ -61,3 +81,5 @@ Route::get('/fecha-out',[\App\Http\Controllers\IngresoController::class,'fecha']
 
 Route::get('/filtro', [IngresoController::class, 'filtroNombre'])->name('ingreso.filtro');
 
+
+Route::get('/fecha-out',[\App\Http\Controllers\EgresoController::class,'fecha'])->name('egreso.fecha');
