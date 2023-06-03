@@ -1,25 +1,40 @@
 <?php
-
 use Illuminate\Support\Facades\Route;
+
+
+
 
 Route::get('/', function () {
 
-
-
     return view('Home');
-
 
 });
 
+Route::get('views/vendor/Home', function () {
+    return view('Home');
+})->name('Home');
+
+//Route::get('/', function () {
+
+  //  return view('Ingreso/in');
+
+//});
+
 //RUTAS DE LOGIN
 Route::get('views/auth/login', function () {
-    return view('auth/login');
+   return view('auth/login');
 })->name('login');
 
 Route::get('views/auth/register', function () {
     return view('auth/register');
 })->name('register');
 
+//Route::post('/register', 'register');
+Route::post('/register',[RegisterController::class, 'index']);
+
+Route::post('/login',[LoginController::class, '$redirectTo']);
+
+//Route::get('/register',[\App\Http\Controllers\Auth\RegisterController::class,'validator'])->name('register.create');
 
 Route::get('/show/{id}',[IngresoController::class,'showIn'])->name('ingreso.show');
 
@@ -54,6 +69,7 @@ Route::get('/ingreso',[\App\Http\Controllers\IngresoController::class,'index'])-
 Route::get('/in',[\App\Http\Controllers\IngresoController::class,'create'])->name('ingreso.create');
 Route::post('/store-in',[\App\Http\Controllers\IngresoController::class,'store'])->name('ingreso.store');
 Route::get('/show-in/{id_ingreso}',[\App\Http\Controllers\IngresoController::class,'show'])->name('ingreso.show');
+Route::get('/fecha-in',[\App\Http\Controllers\IngresoController::class,'fecha'])->name('ingreso.fecha');
 
 
 //RUTAS EGRESO
@@ -61,3 +77,10 @@ Route::get('/egreso',[\App\Http\Controllers\EgresoController::class,'index'])->n
 Route::get('/out',[\App\Http\Controllers\EgresoController::class,'create'])->name('egreso.create');
 Route::post('/store-out',[\App\Http\Controllers\EgresoController::class,'store'])->name('egreso.store');
 Route::get('/show-out/{id_egreso}',[\App\Http\Controllers\EgresoController::class,'show'])->name('egreso.show');
+Route::get('/fecha-out',[\App\Http\Controllers\IngresoController::class,'fecha'])->name('egreso.fecha');
+
+Route::get('/filtro', [\App\Http\Controllers\IngresoController::class, 'filtroNombre'])->name('ingreso.filtro');
+Route::get('/filtroe', [\App\Http\Controllers\EgresoController::class, 'filtroNombre'])->name('egreso.filtro');
+
+
+Route::get('/fecha-out',[\App\Http\Controllers\EgresoController::class,'fecha'])->name('egreso.fecha');

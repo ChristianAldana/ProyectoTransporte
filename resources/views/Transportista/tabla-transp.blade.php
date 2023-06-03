@@ -8,13 +8,17 @@
 <link href="{{ asset('assets/form.css') }}" rel="stylesheet">
 
 @section('contenido')
-<div class=" ">
+<div class="mt-3 mb-5">
     <div class="row">
         <div class="col-md-3">
             <div class="contact-info">
                 <img src="https://raw.githubusercontent.com/Suzzanne20/ResourceNekoStation/main/kisspng-computer-icons-truck-font-awesome-couriers-vector-5ae0b656310a78.1827635715246761822009.png" width="90"/>
                 <h2 class="display-6">Registros transportista</h2>
                 <div class="d-flex justify-content-end">
+                    <a style="margin-right: 10px;" href="{{ route("Home") }}" class="btn btn-dark btn-sm my-5">
+                        Volver
+                    </a>
+                    <br>
                     <a href="{{ route("transportista.create") }}" class="btn btn-dark btn-sm my-5">
                         Agregar nuevo
                     </a>

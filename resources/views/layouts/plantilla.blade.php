@@ -12,13 +12,13 @@
     <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <link href="{{ asset('assets/form.css') }}" rel="stylesheet">
-    
+
     <title>@yield('tituloPagina')</title>
 
     <nav class="navbar navbar-expand-lg navbar navbar-light" style="background-color: #FF8B00;">@yield('navbar')
         <div class="container-fluid">
           <img src="https://www.pngall.com/wp-content/uploads/5/Vector-Truck.png" height="40">
-          <h3 class="col-2">Transporte Ultra Rapidos</h3> 
+          <h3 class="col-2">Transporte Ultra Rapidos</h3>
           <a class="navbar-brand" href="/home" >Inicio</a>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -57,13 +57,18 @@
 
 
   <body>
-    
+
         <div class="container">
             @yield('contenido')
         </div>
 
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
+
+
+
+
 
   </body>
 </html>

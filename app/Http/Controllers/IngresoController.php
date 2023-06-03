@@ -17,20 +17,17 @@ class IngresoController extends Controller
 {
     public function index()
     {
-    
         $datos = Ingreso::orderBy('id_ingreso', 'asc')->paginate(8);
         return view('Ingreso/inTabla', compact('datos'));
     }
-    
+
     public function create()
     {
         return view('Ingreso/in');
     }
 
-
     public function store(Request $request)
-    {   
-
+    {
         $ingreso = new Ingreso;
         $ingreso->origen = $request->post('origen');
         $ingreso->fechaIn = $request->post('fechaIn');
@@ -48,13 +45,11 @@ class IngresoController extends Controller
         return redirect()->route('ingreso.index');
     }
 
-
     public function show(Ingreso $ingreso)
     {
         $ingreso = Ingreso::find($ingreso->id_ingreso);
         return view('Ingreso.in', compact('ingreso'));
     }
-      
 
     public function edit(Ingreso $ingreso)
     {
@@ -69,5 +64,25 @@ class IngresoController extends Controller
     public function destroy(Ingreso $ingreso)
     {
         //
+    }
+
+    public function fecha()
+    {
+        $datos = Ingreso::orderBy('id_ingreso', 'asc')->paginate(8);
+        return view('Ingreso/search1', compact('datos'));
+    }
+
+    public function filtroNombre(Request $request)
+    {
+        $filtroNombre = $request->input('filtro_nombre');
+
+        // Obtener los registros de ingresos filtrados por nombre
+        $datos = Ingreso::query()
+            ->whereHas('transportista', function ($query) use ($filtroNombre) {
+                $query->where('nombre', 'like', "%$filtroNombre%");
+            })
+            ->paginate(10);
+
+        return view('Ingreso/inTabla', compact('datos', 'filtroNombre'));
     }
 }
