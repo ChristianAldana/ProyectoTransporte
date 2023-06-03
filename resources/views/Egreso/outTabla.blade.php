@@ -1,9 +1,7 @@
 @extends('layouts/layout')
-@section('Tabla', 'Transportista')
-
+@section('Tabla', 'Egreso')
 @section('contenido')
-<div class=" ">
-	<link href="{{ asset('assets/form.css') }}" rel="stylesheet">
+
 <div class="mt-3 mb-5">
     <div class="row">
         <div class="col-md-3">
@@ -11,11 +9,9 @@
                 <img src="https://raw.githubusercontent.com/Suzzanne20/ResourceNekoStation/main/kisspng-computer-icons-truck-font-awesome-couriers-vector-5ae0b656310a78.1827635715246761822009.png" width="90"/>
                 <h2 class="display-6">Registros de Egresos</h2>
                 <div class="d-flex justify-content-end">
-
                     <a style="margin-right: 10px;" href="{{ route("Home") }}" class="btn btn-dark btn-sm my-5">
                         Volver
                     </a>
-
                     <a href="{{ route("egreso.create") }}" class="btn btn-dark btn-sm my-5">
                         Agregar nuevo
                     </a>
@@ -23,7 +19,6 @@
             </div>
         </div>
         <div class="col-md-9">
-
             <div class="table table-responsive">
                 <form method="GET" action="{{ route('egreso.filtro') }}">
                     <div class="form-group">
@@ -56,7 +51,6 @@
                             <td>{{$item->carga->carga}}</td>
                             <td>{{$item->predio->ubicacion}}</td>
                             <td>{{$item->bodega->bodega}}</td>
-
                         </tr>
                     @endforeach
                     </tbody>

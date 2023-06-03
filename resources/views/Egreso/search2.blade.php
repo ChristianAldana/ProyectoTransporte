@@ -1,6 +1,5 @@
 @extends('layouts/layout')
 @section('contenido')
-    <link href="{{ asset('assets/form.css') }}" rel="stylesheet">
     <div class="mt-3 mb-5">
         <div class="row">
             <div class="col-md-3">
@@ -19,7 +18,7 @@
             </div>
             <div class="col-md-9">
                 <form class="form-inline" action="" method="GET">
-                    <div class="form-row align-items-center">
+                    <div class="form-row align-items-center mb-4">
                         <div class="col-md-4">
                             <div class="form-group">
                                 <label><b>Del Dia</b></label>
