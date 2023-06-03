@@ -21,14 +21,14 @@ class EgresoController extends Controller
         $datos = Egreso::orderBy('id_egreso', 'asc')->paginate(8);
         return view('Egreso/outTabla', compact('datos'));
     }
-    
+
     public function create()
     {
         return view('Egreso/out');
     }
 
     public function store(Request $request)
-    {   
+    {
 
         $egreso = new Egreso;
         $egreso->destino = $request->post('destino');
@@ -53,7 +53,7 @@ class EgresoController extends Controller
         $egreso = Egreso::find($egreso->id_egreso);
         return view('Egreso.out', compact('egreso'));
     }
-      
+
 
     public function edit(Egreso $egreso)
     {
@@ -68,5 +68,9 @@ class EgresoController extends Controller
     public function destroy(Egreso $egreso)
     {
         //
+    }
+    public function fecha(){
+        $datos = Egreso::orderBy('id_egreso', 'asc')->paginate(8);
+        return view('Egreso/search2', compact('datos'));
     }
 }

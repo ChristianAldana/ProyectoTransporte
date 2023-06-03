@@ -3,12 +3,7 @@
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
-
-
-
     return view('Home');
-
-
 });
 
 //RUTAS DE LOGIN
@@ -54,6 +49,7 @@ Route::get('/ingreso',[\App\Http\Controllers\IngresoController::class,'index'])-
 Route::get('/in',[\App\Http\Controllers\IngresoController::class,'create'])->name('ingreso.create');
 Route::post('/store-in',[\App\Http\Controllers\IngresoController::class,'store'])->name('ingreso.store');
 Route::get('/show-in/{id_ingreso}',[\App\Http\Controllers\IngresoController::class,'show'])->name('ingreso.show');
+Route::get('/fecha-in',[\App\Http\Controllers\IngresoController::class,'fecha'])->name('ingreso.fecha');
 
 
 //RUTAS EGRESO
@@ -61,3 +57,4 @@ Route::get('/egreso',[\App\Http\Controllers\EgresoController::class,'index'])->n
 Route::get('/out',[\App\Http\Controllers\EgresoController::class,'create'])->name('egreso.create');
 Route::post('/store-out',[\App\Http\Controllers\EgresoController::class,'store'])->name('egreso.store');
 Route::get('/show-out/{id_egreso}',[\App\Http\Controllers\EgresoController::class,'show'])->name('egreso.show');
+Route::get('/fecha-out',[\App\Http\Controllers\IngresoController::class,'fecha'])->name('egreso.fecha');
