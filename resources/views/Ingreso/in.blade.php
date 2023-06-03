@@ -1,7 +1,17 @@
+
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <link href="{{ asset('assets/form.css') }}" rel="stylesheet">
+
+
+<div class="container contact">
+
 	@extends('layouts/layout')
 	@section('contenido')
 	<link href="{{ asset('assets/form.css') }}" rel="stylesheet">
 <div class=" mt-3 mb-5 ">
+
 	<div class="row">
 		<div class="col-md-3">
 			<div class="contact-info">
@@ -9,6 +19,10 @@
 				<h2 class="display-6">Registro de Ingresos</h2>
 			</div>
 		</div>
+
+
+
+
 
 		<div class="col-md-9">
 			<div class="contact-form">
@@ -54,6 +68,7 @@
 				  </div>
 				</div>
 
+
 				<div class="input-group col-mb-10">
 					<label class="control-label col-sm-3 mr-2" for="id_carga">Tipo de Carga</label>
 					<select class="form-select col-sm-6 ml-4" id="id_carga" name="id_carga">
@@ -65,6 +80,12 @@
 						<option value="5">Frágil</option>
 					</select>
 				</div>
+
+
+				<br><div class="input-group col-mb-10">
+					<label class="control-label col-sm-5" for="id_predio">Predio</label>
+					<label class="control-label col-sm-5" for="id_bodega">Bodega</label>
+
 
 				<div class="input-group col-mb-10">
 					<label class="control-label col-sm-3 mr-2" for="id_predio">Predio</label>
@@ -86,6 +107,9 @@
                     </select>
 				</div>
 
+
+				<br><div class="form-group">
+
 				<div class="form-group">
 				  <label class="control-label col-sm-4" for="id_usuario">Usuario</label>
 				  <div class="input-group col-sm-10">
@@ -94,8 +118,10 @@
 				</div>
 
                 <div class="form-group">
+
 				  <div class="col-sm-offset-2 col-sm-10">
                   <button type="submit" class="btn btn-default">Submit</button>
+
 				  </div>
 				</div>
             </form>
